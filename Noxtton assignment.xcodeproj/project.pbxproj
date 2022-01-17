@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5802F094278F0C5100296D2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5802F093278F0C5100296D2A /* AppDelegate.swift */; };
+		5802F096278F0C5100296D2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5802F095278F0C5100296D2A /* SceneDelegate.swift */; };
+		5802F098278F0C5100296D2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5802F097278F0C5100296D2A /* ViewController.swift */; };
+		5802F09B278F0C5100296D2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5802F099278F0C5100296D2A /* Main.storyboard */; };
+		5802F09E278F0C5100296D2A /* Noxtton_assignment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5802F09C278F0C5100296D2A /* Noxtton_assignment.xcdatamodeld */; };
+		5802F0A0278F0C5200296D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5802F09F278F0C5200296D2A /* Assets.xcassets */; };
+		5802F0A3278F0C5200296D2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5802F0A1278F0C5200296D2A /* LaunchScreen.storyboard */; };
+		5802F0AD278F336300296D2A /* QuickSand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5802F0AC278F336300296D2A /* QuickSand.ttf */; };
+		5802F0B0278F345000296D2A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5802F0AF278F345000296D2A /* Extensions.swift */; };
+		587866322792278300CB274E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587866312792278300CB274E /* Register.storyboard */; };
+		587866342792278F00CB274E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587866332792278F00CB274E /* RegisterViewController.swift */; };
+		587866362794342C00CB274E /* vactinationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587866352794342C00CB274E /* vactinationCollectionViewController.swift */; };
+		587866382794357B00CB274E /* VaccinesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587866372794357B00CB274E /* VaccinesCollectionViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5802F090278F0C5100296D2A /* Noxtton assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Noxtton assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5802F093278F0C5100296D2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5802F095278F0C5100296D2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5802F097278F0C5100296D2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5802F09A278F0C5100296D2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5802F09D278F0C5100296D2A /* Noxtton_assignment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Noxtton_assignment.xcdatamodel; sourceTree = "<group>"; };
+		5802F09F278F0C5200296D2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5802F0A2278F0C5200296D2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5802F0A4278F0C5200296D2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5802F0AC278F336300296D2A /* QuickSand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = QuickSand.ttf; sourceTree = "<group>"; };
+		5802F0AF278F345000296D2A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		587866312792278300CB274E /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		587866332792278F00CB274E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		587866352794342C00CB274E /* vactinationCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vactinationCollectionViewController.swift; sourceTree = "<group>"; };
+		587866372794357B00CB274E /* VaccinesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinesCollectionViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5802F08D278F0C5100296D2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5802F087278F0C5100296D2A = {
+			isa = PBXGroup;
+			children = (
+				5802F092278F0C5100296D2A /* Noxtton assignment */,
+				5802F091278F0C5100296D2A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5802F091278F0C5100296D2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5802F090278F0C5100296D2A /* Noxtton assignment.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5802F092278F0C5100296D2A /* Noxtton assignment */ = {
+			isa = PBXGroup;
+			children = (
+				5802F0AB278F299500296D2A /* Main Files */,
+				5802F0AA278F296900296D2A /* Login Register Page */,
+				5802F0B1278F345400296D2A /* Extensions */,
+				5802F09F278F0C5200296D2A /* Assets.xcassets */,
+				5802F0A4278F0C5200296D2A /* Info.plist */,
+				5802F0A1278F0C5200296D2A /* LaunchScreen.storyboard */,
+				5802F09C278F0C5100296D2A /* Noxtton_assignment.xcdatamodeld */,
+				5802F0AE278F337200296D2A /* Fonts */,
+			);
+			path = "Noxtton assignment";
+			sourceTree = "<group>";
+		};
+		5802F0AA278F296900296D2A /* Login Register Page */ = {
+			isa = PBXGroup;
+			children = (
+				5878663927946AA700CB274E /* Register */,
+				5802F0B22790539D00296D2A /* Login */,
+			);
+			path = "Login Register Page";
+			sourceTree = "<group>";
+		};
+		5802F0AB278F299500296D2A /* Main Files */ = {
+			isa = PBXGroup;
+			children = (
+				5802F093278F0C5100296D2A /* AppDelegate.swift */,
+				5802F095278F0C5100296D2A /* SceneDelegate.swift */,
+			);
+			path = "Main Files";
+			sourceTree = "<group>";
+		};
+		5802F0AE278F337200296D2A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5802F0AC278F336300296D2A /* QuickSand.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5802F0B1278F345400296D2A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5802F0AF278F345000296D2A /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5802F0B22790539D00296D2A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5802F097278F0C5100296D2A /* ViewController.swift */,
+				5802F099278F0C5100296D2A /* Main.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5878663927946AA700CB274E /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				587866312792278300CB274E /* Register.storyboard */,
+				587866372794357B00CB274E /* VaccinesCollectionViewCell.swift */,
+				587866332792278F00CB274E /* RegisterViewController.swift */,
+				587866352794342C00CB274E /* vactinationCollectionViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5802F08F278F0C5100296D2A /* Noxtton assignment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5802F0A7278F0C5200296D2A /* Build configuration list for PBXNativeTarget "Noxtton assignment" */;
+			buildPhases = (
+				5802F08C278F0C5100296D2A /* Sources */,
+				5802F08D278F0C5100296D2A /* Frameworks */,
+				5802F08E278F0C5100296D2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Noxtton assignment";
+			productName = "Noxtton assignment";
+			productReference = 5802F090278F0C5100296D2A /* Noxtton assignment.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5802F088278F0C5100296D2A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					5802F08F278F0C5100296D2A = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = 5802F08B278F0C5100296D2A /* Build configuration list for PBXProject "Noxtton assignment" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5802F087278F0C5100296D2A;
+			productRefGroup = 5802F091278F0C5100296D2A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5802F08F278F0C5100296D2A /* Noxtton assignment */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5802F08E278F0C5100296D2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5802F0A3278F0C5200296D2A /* LaunchScreen.storyboard in Resources */,
+				5802F0AD278F336300296D2A /* QuickSand.ttf in Resources */,
+				5802F0A0278F0C5200296D2A /* Assets.xcassets in Resources */,
+				5802F09B278F0C5100296D2A /* Main.storyboard in Resources */,
+				587866322792278300CB274E /* Register.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5802F08C278F0C5100296D2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5802F0B0278F345000296D2A /* Extensions.swift in Sources */,
+				5802F098278F0C5100296D2A /* ViewController.swift in Sources */,
+				5802F09E278F0C5100296D2A /* Noxtton_assignment.xcdatamodeld in Sources */,
+				587866342792278F00CB274E /* RegisterViewController.swift in Sources */,
+				587866382794357B00CB274E /* VaccinesCollectionViewCell.swift in Sources */,
+				5802F094278F0C5100296D2A /* AppDelegate.swift in Sources */,
+				587866362794342C00CB274E /* vactinationCollectionViewController.swift in Sources */,
+				5802F096278F0C5100296D2A /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5802F099278F0C5100296D2A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5802F09A278F0C5100296D2A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5802F0A1278F0C5200296D2A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5802F0A2278F0C5200296D2A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5802F0A5278F0C5200296D2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5802F0A6278F0C5200296D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5802F0A8278F0C5200296D2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A7X427YJGK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Noxtton assignment/Info.plist";
+				INFOPLIST_KEY_CFBundleExecutable = "Noxtton assignment";
+				INFOPLIST_KEY_CFBundleName = "Noxtton assignment";
+				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.Noxtton-assignment";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5802F0A9278F0C5200296D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A7X427YJGK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Noxtton assignment/Info.plist";
+				INFOPLIST_KEY_CFBundleExecutable = "Noxtton assignment";
+				INFOPLIST_KEY_CFBundleName = "Noxtton assignment";
+				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.Noxtton-assignment";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5802F08B278F0C5100296D2A /* Build configuration list for PBXProject "Noxtton assignment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5802F0A5278F0C5200296D2A /* Debug */,
+				5802F0A6278F0C5200296D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5802F0A7278F0C5200296D2A /* Build configuration list for PBXNativeTarget "Noxtton assignment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5802F0A8278F0C5200296D2A /* Debug */,
+				5802F0A9278F0C5200296D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5802F09C278F0C5100296D2A /* Noxtton_assignment.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5802F09D278F0C5100296D2A /* Noxtton_assignment.xcdatamodel */,
+			);
+			currentVersion = 5802F09D278F0C5100296D2A /* Noxtton_assignment.xcdatamodel */;
+			path = Noxtton_assignment.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5802F088278F0C5100296D2A /* Project object */;
+}

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19115.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.5"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Register View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="RegisterVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="RegisterViewController" customModule="Noxtton_assignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IRp-1e-1Mr">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="336"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="336" id="eai-V9-Sms"/>
+                                    <constraint firstAttribute="width" constant="430" id="yRD-CZ-FCP"/>
+                                </constraints>
+                                <imageReference key="image" image="RegisterTOP"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dv2-o5-rAw">
+                                <rect key="frame" x="118.5" y="114" width="177.5" height="67"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="56"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="o5K-tE-fD1">
+                                <rect key="frame" x="47" y="306" width="320" height="178"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MSs-0L-lb3">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="3nW-S4-ZzK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yy-IB-xLp">
+                                        <rect key="frame" x="0.0" y="64" width="320" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ou7-uc-e6j"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yAd-wD-T8F">
+                                        <rect key="frame" x="0.0" y="128" width="320" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ccs-3j-LZs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tj8-15-05Z">
+                                <rect key="frame" x="47" y="509" width="320" height="50"/>
+                                <color key="backgroundColor" name="MainBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Zkp-0r-hVw"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="are you vaccinated ?">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="1km-CA-iks" kind="showDetail" id="zvV-hl-agv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8Q-mO-lGT">
+                                <rect key="frame" x="118" y="589" width="177" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="4sy-PO-fwZ"/>
+                                    <constraint firstAttribute="width" constant="177" id="hqy-DN-a8I"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="confirm"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="L8Q-mO-lGT" firstAttribute="top" secondItem="Tj8-15-05Z" secondAttribute="bottom" constant="30" id="IUa-z4-JvD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="o5K-tE-fD1" secondAttribute="trailing" constant="47" id="Irm-eM-zw7"/>
+                            <constraint firstItem="L8Q-mO-lGT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="118" id="MoM-f4-7Oz"/>
+                            <constraint firstItem="o5K-tE-fD1" firstAttribute="top" secondItem="IRp-1e-1Mr" secondAttribute="bottom" constant="-30" id="NWs-SN-0Hi"/>
+                            <constraint firstItem="Tj8-15-05Z" firstAttribute="top" secondItem="o5K-tE-fD1" secondAttribute="bottom" constant="25" id="PRp-vS-Vhr"/>
+                            <constraint firstItem="IRp-1e-1Mr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="WG4-hq-bdG"/>
+                            <constraint firstItem="o5K-tE-fD1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="47" id="c31-2y-xIF"/>
+                            <constraint firstItem="Tj8-15-05Z" firstAttribute="leading" secondItem="o5K-tE-fD1" secondAttribute="leading" id="cAE-HO-3Mo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="L8Q-mO-lGT" secondAttribute="trailing" constant="119" id="cLp-HY-eXH"/>
+                            <constraint firstItem="Dv2-o5-rAw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="70" id="dPf-GT-Azj"/>
+                            <constraint firstAttribute="trailing" secondItem="IRp-1e-1Mr" secondAttribute="trailing" constant="-16" id="gQ4-Ve-Fyo"/>
+                            <constraint firstItem="Tj8-15-05Z" firstAttribute="trailing" secondItem="o5K-tE-fD1" secondAttribute="trailing" id="kqS-qW-cpL"/>
+                            <constraint firstItem="IRp-1e-1Mr" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="vMy-KG-p8V"/>
+                            <constraint firstItem="Dv2-o5-rAw" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xHl-37-keK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ye1-Ym-Yvf"/>
+                    <connections>
+                        <outlet property="RegisterLabel" destination="Dv2-o5-rAw" id="Qq7-j9-mbG"/>
+                        <outlet property="confirmRegisterButton" destination="L8Q-mO-lGT" id="aKD-hJ-UWZ"/>
+                        <outlet property="passwordLabelRegister" destination="7yy-IB-xLp" id="TnM-t0-YwU"/>
+                        <outlet property="repeatPasswordLabelRegister" destination="yAd-wD-T8F" id="w4u-D6-IiA"/>
+                        <outlet property="usernameLabelRegister" destination="MSs-0L-lb3" id="wdj-XL-9OS"/>
+                        <outlet property="vactinationInfo" destination="Tj8-15-05Z" id="eoM-sq-oYu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1876.8115942028987" y="65.625"/>
+        </scene>
+        <!--Vactination Collection View Controller-->
+        <scene sceneID="JCw-wo-VAr">
+            <objects>
+                <viewController storyboardIdentifier="vactinationCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1km-CA-iks" customClass="vactinationCollectionViewController" customModule="Noxtton_assignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TCm-dV-AUX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Given information will help us create as best data plan for you as possible" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eoc-NU-M3e">
+                                <rect key="frame" x="20" y="20" width="374" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="9F1-TR-Nzp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.10980392160000001" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgv-sP-Ud4">
+                                <rect key="frame" x="0.0" y="114" width="414" height="1"/>
+                                <color key="backgroundColor" name="myGray"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="HjW-GS-5uV"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qeb-46-fZx">
+                                <rect key="frame" x="0.0" y="686" width="414" height="156"/>
+                                <imageReference key="image" image="VaccineCollectionView"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="which vaccine?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZk-Qd-End">
+                                <rect key="frame" x="20" y="130" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ics-8b-Tvm">
+                                <rect key="frame" x="20" y="166" width="374" height="407"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hwC-ZA-mFd">
+                                    <size key="itemSize" width="124" height="124"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="vaccine" id="lJj-OU-13U" customClass="VaccinesCollectionViewCell" customModule="Noxtton_assignment" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KgB-xV-Xa7">
+                                            <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4H-2J-bB2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
+                                        <size key="customSize" width="124" height="124"/>
+                                        <connections>
+                                            <outlet property="vaccineButton" destination="j4H-2J-bB2" id="jpQ-sg-asC"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzl-po-9Es">
+                                <rect key="frame" x="20" y="625" width="374" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="G45-MU-CvX"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="I am not vaccinated"/>
+                                <connections>
+                                    <action selector="notVaccinated:" destination="1km-CA-iks" eventType="touchUpInside" id="KiI-CK-Jsr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nd5-oR-jYb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Qeb-46-fZx" secondAttribute="bottom" id="0pf-Uk-bZt"/>
+                            <constraint firstItem="ics-8b-Tvm" firstAttribute="top" secondItem="pZk-Qd-End" secondAttribute="bottom" constant="15" id="1YK-DK-l34"/>
+                            <constraint firstItem="cgv-sP-Ud4" firstAttribute="top" secondItem="Eoc-NU-M3e" secondAttribute="bottom" constant="8" symbolic="YES" id="2lv-Gn-CW6"/>
+                            <constraint firstItem="ics-8b-Tvm" firstAttribute="leading" secondItem="Nd5-oR-jYb" secondAttribute="leading" constant="20" id="3Ag-lP-cQe"/>
+                            <constraint firstItem="Nd5-oR-jYb" firstAttribute="trailing" secondItem="Eoc-NU-M3e" secondAttribute="trailing" constant="20" id="GKh-C2-QeE"/>
+                            <constraint firstItem="Nd5-oR-jYb" firstAttribute="bottom" secondItem="gzl-po-9Es" secondAttribute="bottom" constant="172" id="K71-aX-rFc"/>
+                            <constraint firstItem="gzl-po-9Es" firstAttribute="trailing" secondItem="ics-8b-Tvm" secondAttribute="trailing" id="LSj-eA-Rjc"/>
+                            <constraint firstItem="gzl-po-9Es" firstAttribute="leading" secondItem="ics-8b-Tvm" secondAttribute="leading" id="OgV-e3-jIo"/>
+                            <constraint firstItem="pZk-Qd-End" firstAttribute="leading" secondItem="Nd5-oR-jYb" secondAttribute="leading" constant="20" id="Q8A-64-JUv"/>
+                            <constraint firstItem="Eoc-NU-M3e" firstAttribute="leading" secondItem="Nd5-oR-jYb" secondAttribute="leading" constant="20" id="QNr-uV-fCz"/>
+                            <constraint firstItem="Qeb-46-fZx" firstAttribute="trailing" secondItem="Nd5-oR-jYb" secondAttribute="trailing" id="Xmc-K6-M9q"/>
+                            <constraint firstItem="Eoc-NU-M3e" firstAttribute="top" secondItem="Nd5-oR-jYb" secondAttribute="top" constant="20" id="Yq8-g9-1cK"/>
+                            <constraint firstItem="gzl-po-9Es" firstAttribute="top" secondItem="ics-8b-Tvm" secondAttribute="bottom" constant="10" id="cyv-nu-p7Z"/>
+                            <constraint firstItem="Nd5-oR-jYb" firstAttribute="trailing" secondItem="ics-8b-Tvm" secondAttribute="trailing" constant="20" id="grR-Xa-fwl"/>
+                            <constraint firstItem="Nd5-oR-jYb" firstAttribute="trailing" secondItem="pZk-Qd-End" secondAttribute="trailing" constant="20" id="ifo-cN-WXp"/>
+                            <constraint firstAttribute="trailing" secondItem="cgv-sP-Ud4" secondAttribute="trailing" id="ivx-RO-bqC"/>
+                            <constraint firstItem="pZk-Qd-End" firstAttribute="top" secondItem="cgv-sP-Ud4" secondAttribute="bottom" constant="15" id="kix-Gr-2mM"/>
+                            <constraint firstItem="cgv-sP-Ud4" firstAttribute="leading" secondItem="TCm-dV-AUX" secondAttribute="leading" id="oUZ-eP-GFb"/>
+                            <constraint firstItem="Qeb-46-fZx" firstAttribute="leading" secondItem="Nd5-oR-jYb" secondAttribute="leading" id="qd9-j5-oJ8"/>
+                            <constraint firstItem="Qeb-46-fZx" firstAttribute="top" secondItem="gzl-po-9Es" secondAttribute="bottom" constant="50" id="wPQ-Fs-cNd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainText" destination="Eoc-NU-M3e" id="xXv-89-t8H"/>
+                        <outlet property="vaccinesCollectionView" destination="ics-8b-Tvm" id="c0K-H6-I3b"/>
+                        <outlet property="whichVaccineLabel" destination="pZk-Qd-End" id="efR-XY-tBO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CPa-ui-I6c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2808.6956521739135" y="-346.20535714285711"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="RegisterTOP" width="375" height="336"/>
+        <image name="VaccineCollectionView" width="375" height="171"/>
+        <namedColor name="MainBlue">
+            <color red="0.29411764705882354" green="0.45490196078431372" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="myGray">
+            <color red="0.67799997329711914" green="0.67799997329711914" blue="0.67799997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="quaternarySystemFillColor">
+            <color red="0.45490196078431372" green="0.45490196078431372" blue="0.50196078431372548" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
