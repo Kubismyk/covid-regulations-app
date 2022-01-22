@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Hero
 
 class ViewController: UIViewController {
     // Main label below
@@ -14,16 +15,23 @@ class ViewController: UIViewController {
     // TextFields below
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
     // Buttons below
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var beGuestButton: UIButton!
     @IBOutlet weak var forgetPasswordButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hero.isEnabled = true
+        self.view.hero.id = "firstView"
         loginDesign()
     }
 
+    @IBAction func loginButton(_ sender: Any) {
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "HomePage", bundle:nil)
+//
+//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomePageID") as! HomePageViewController
+//        self.present(nextViewController, animated:true, completion:nil)
+    }
     
     @IBAction func goToRegisterButton(_ sender: Any) {
 //        let storyBoard : UIStoryboard = UIStoryboard(name: "RegisterStoryboard", bundle:nil)

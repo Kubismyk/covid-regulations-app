@@ -7,6 +7,40 @@
 import Foundation
 import UIKit
 
+
+// UI VIEW
+
+extension UIView {
+
+
+      // OUTPUT 1
+
+      // OUTPUT 2
+    func dropShadow(shadowColor:UIColor,shadowX:Double,shadowY:Double,shadowOpacity:Float,shadowRadius:CGFloat){
+        self.layer.shadowColor = shadowColor.cgColor
+        self.layer.shadowOffset = CGSize(width: shadowX, height: shadowY)
+        self.layer.shadowOpacity = shadowOpacity
+        self.layer.shadowRadius = shadowRadius
+        self.layer.masksToBounds = false
+    }
+    func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
+        if #available(iOS 11.0, *) {
+            clipsToBounds = true
+            layer.cornerRadius = radius
+            layer.maskedCorners = CACornerMask(rawValue: corners.rawValue)
+        } else {
+            let path = UIBezierPath(
+                roundedRect: bounds,
+                byRoundingCorners: corners,
+                cornerRadii: CGSize(width: radius, height: radius)
+            )
+            let mask = CAShapeLayer()
+            mask.path = path.cgPath
+            layer.mask = mask
+        }
+    }
+}
+
 //                   BUTTON EXTENSION BELOW
 public extension UIButton {
     func buttonStyle(buttonPositionX: Double, buttonPositionY: Double ,buttonWidth: Double, buttonHeight: Double, buttonTilte: String,backgroundColor: UIColor, titleColor:UIColor) {
