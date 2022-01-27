@@ -17,6 +17,10 @@
 		5802F0AD278F336300296D2A /* QuickSand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5802F0AC278F336300296D2A /* QuickSand.ttf */; };
 		5802F0B0278F345000296D2A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5802F0AF278F345000296D2A /* Extensions.swift */; };
 		586FF997279C45180029BE7B /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586FF996279C45180029BE7B /* TagsCollectionViewCell.swift */; };
+		586FF99A279C52510029BE7B /* Saved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586FF999279C52510029BE7B /* Saved.storyboard */; };
+		586FF99C279C525E0029BE7B /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586FF99B279C525E0029BE7B /* SavedViewController.swift */; };
+		586FF9A4279D9DEC0029BE7B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586FF9A3279D9DEC0029BE7B /* TabBarController.swift */; };
+		586FF9A6279DB5590029BE7B /* MySubscribitionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586FF9A5279DB5590029BE7B /* MySubscribitionsCollectionViewCell.swift */; };
 		587866322792278300CB274E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587866312792278300CB274E /* Register.storyboard */; };
 		587866342792278F00CB274E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587866332792278F00CB274E /* RegisterViewController.swift */; };
 		587866362794342C00CB274E /* vactinationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587866352794342C00CB274E /* vactinationCollectionViewController.swift */; };
@@ -24,6 +28,11 @@
 		5878663C2795FE2100CB274E /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5878663B2795FE2100CB274E /* HomePageViewController.swift */; };
 		5878663E2795FE2A00CB274E /* HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5878663D2795FE2A00CB274E /* HomePage.storyboard */; };
 		587866412796EDF500CB274E /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 587866402796EDF500CB274E /* Hero */; };
+		588DF68F27A082D500D052B8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 588DF68E27A082D500D052B8 /* Profile.storyboard */; };
+		588DF69127A082E900D052B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588DF69027A082E900D052B8 /* ProfileViewController.swift */; };
+		588DF69527A35BD900D052B8 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 588DF69427A35BD900D052B8 /* SideMenu */; };
+		588DF69827A35D0B00D052B8 /* menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 588DF69727A35D0B00D052B8 /* menu.storyboard */; };
+		588DF69A27A35D1900D052B8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588DF69927A35D1900D052B8 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,12 +48,20 @@
 		5802F0AC278F336300296D2A /* QuickSand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = QuickSand.ttf; sourceTree = "<group>"; };
 		5802F0AF278F345000296D2A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		586FF996279C45180029BE7B /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
+		586FF999279C52510029BE7B /* Saved.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Saved.storyboard; sourceTree = "<group>"; };
+		586FF99B279C525E0029BE7B /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		586FF9A3279D9DEC0029BE7B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		586FF9A5279DB5590029BE7B /* MySubscribitionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySubscribitionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		587866312792278300CB274E /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		587866332792278F00CB274E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		587866352794342C00CB274E /* vactinationCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vactinationCollectionViewController.swift; sourceTree = "<group>"; };
 		587866372794357B00CB274E /* VaccinesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinesCollectionViewCell.swift; sourceTree = "<group>"; };
 		5878663B2795FE2100CB274E /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		5878663D2795FE2A00CB274E /* HomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomePage.storyboard; sourceTree = "<group>"; };
+		588DF68E27A082D500D052B8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		588DF69027A082E900D052B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		588DF69727A35D0B00D052B8 /* menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = menu.storyboard; sourceTree = "<group>"; };
+		588DF69927A35D1900D052B8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				588DF69527A35BD900D052B8 /* SideMenu in Frameworks */,
 				587866412796EDF500CB274E /* Hero in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +96,9 @@
 		5802F092278F0C5100296D2A /* Noxtton assignment */ = {
 			isa = PBXGroup;
 			children = (
+				588DF68C27A0829600D052B8 /* Tab Bar */,
+				588DF68D27A082A300D052B8 /* Profile */,
+				586FF998279C522C0029BE7B /* Saved page */,
 				5878663A2795FE0300CB274E /* Home page */,
 				5802F0AB278F299500296D2A /* Main Files */,
 				5802F0AA278F296900296D2A /* Login Register Page */,
@@ -134,6 +155,16 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		586FF998279C522C0029BE7B /* Saved page */ = {
+			isa = PBXGroup;
+			children = (
+				586FF999279C52510029BE7B /* Saved.storyboard */,
+				586FF9A5279DB5590029BE7B /* MySubscribitionsCollectionViewCell.swift */,
+				586FF99B279C525E0029BE7B /* SavedViewController.swift */,
+			);
+			path = "Saved page";
+			sourceTree = "<group>";
+		};
 		5878663927946AA700CB274E /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,11 +179,54 @@
 		5878663A2795FE0300CB274E /* Home page */ = {
 			isa = PBXGroup;
 			children = (
+				588DF69227A0834200D052B8 /* Page */,
+			);
+			path = "Home page";
+			sourceTree = "<group>";
+		};
+		588DF68C27A0829600D052B8 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				586FF9A3279D9DEC0029BE7B /* TabBarController.swift */,
+			);
+			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		588DF68D27A082A300D052B8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				588DF69627A35CDF00D052B8 /* menu */,
+				588DF69B27A35D2000D052B8 /* profile */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		588DF69227A0834200D052B8 /* Page */ = {
+			isa = PBXGroup;
+			children = (
 				5878663B2795FE2100CB274E /* HomePageViewController.swift */,
 				5878663D2795FE2A00CB274E /* HomePage.storyboard */,
 				586FF996279C45180029BE7B /* TagsCollectionViewCell.swift */,
 			);
-			path = "Home page";
+			path = Page;
+			sourceTree = "<group>";
+		};
+		588DF69627A35CDF00D052B8 /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				588DF69727A35D0B00D052B8 /* menu.storyboard */,
+				588DF69927A35D1900D052B8 /* MenuViewController.swift */,
+			);
+			path = menu;
+			sourceTree = "<group>";
+		};
+		588DF69B27A35D2000D052B8 /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				588DF68E27A082D500D052B8 /* Profile.storyboard */,
+				588DF69027A082E900D052B8 /* ProfileViewController.swift */,
+			);
+			path = profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +247,7 @@
 			name = "Noxtton assignment";
 			packageProductDependencies = (
 				587866402796EDF500CB274E /* Hero */,
+				588DF69427A35BD900D052B8 /* SideMenu */,
 			);
 			productName = "Noxtton assignment";
 			productReference = 5802F090278F0C5100296D2A /* Noxtton assignment.app */;
@@ -204,6 +279,7 @@
 			mainGroup = 5802F087278F0C5100296D2A;
 			packageReferences = (
 				5878663F2796EDF500CB274E /* XCRemoteSwiftPackageReference "Hero" */,
+				588DF69327A35BD900D052B8 /* XCRemoteSwiftPackageReference "SideMenu" */,
 			);
 			productRefGroup = 5802F091278F0C5100296D2A /* Products */;
 			projectDirPath = "";
@@ -221,8 +297,11 @@
 			files = (
 				5802F0A3278F0C5200296D2A /* LaunchScreen.storyboard in Resources */,
 				5802F0AD278F336300296D2A /* QuickSand.ttf in Resources */,
+				588DF68F27A082D500D052B8 /* Profile.storyboard in Resources */,
 				5878663E2795FE2A00CB274E /* HomePage.storyboard in Resources */,
+				586FF99A279C52510029BE7B /* Saved.storyboard in Resources */,
 				5802F0A0278F0C5200296D2A /* Assets.xcassets in Resources */,
+				588DF69827A35D0B00D052B8 /* menu.storyboard in Resources */,
 				5802F09B278F0C5100296D2A /* Main.storyboard in Resources */,
 				587866322792278300CB274E /* Register.storyboard in Resources */,
 			);
@@ -236,13 +315,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5802F0B0278F345000296D2A /* Extensions.swift in Sources */,
+				588DF69A27A35D1900D052B8 /* MenuViewController.swift in Sources */,
 				586FF997279C45180029BE7B /* TagsCollectionViewCell.swift in Sources */,
 				5802F098278F0C5100296D2A /* ViewController.swift in Sources */,
 				5878663C2795FE2100CB274E /* HomePageViewController.swift in Sources */,
+				588DF69127A082E900D052B8 /* ProfileViewController.swift in Sources */,
 				5802F09E278F0C5100296D2A /* Noxtton_assignment.xcdatamodeld in Sources */,
 				587866342792278F00CB274E /* RegisterViewController.swift in Sources */,
 				587866382794357B00CB274E /* VaccinesCollectionViewCell.swift in Sources */,
 				5802F094278F0C5100296D2A /* AppDelegate.swift in Sources */,
+				586FF99C279C525E0029BE7B /* SavedViewController.swift in Sources */,
+				586FF9A4279D9DEC0029BE7B /* TabBarController.swift in Sources */,
+				586FF9A6279DB5590029BE7B /* MySubscribitionsCollectionViewCell.swift in Sources */,
 				587866362794342C00CB274E /* vactinationCollectionViewController.swift in Sources */,
 				5802F096278F0C5100296D2A /* SceneDelegate.swift in Sources */,
 			);
@@ -482,6 +566,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		588DF69327A35BD900D052B8 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -489,6 +581,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5878663F2796EDF500CB274E /* XCRemoteSwiftPackageReference "Hero" */;
 			productName = Hero;
+		};
+		588DF69427A35BD900D052B8 /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 588DF69327A35BD900D052B8 /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
 		};
 /* End XCSwiftPackageProductDependency section */
 

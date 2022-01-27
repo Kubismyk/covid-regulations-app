@@ -30,16 +30,18 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
     @IBOutlet weak var bellButton: UIButton!
     
     
-    @IBOutlet weak var tabBar: UIView!
     
     @IBOutlet weak var destinationBox: UIView!
     
     
     @IBOutlet weak var tagsCollectionView: UICollectionView!
+    @IBOutlet var contentView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
 
+        
+        Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
         
         tagsCollectionView.delegate = self
         tagsCollectionView.dataSource = self
@@ -48,8 +50,6 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
         tagsCollectionView.dropShadow(shadowColor: .black, shadowX: 2, shadowY: 2, shadowOpacity: 0.25, shadowRadius: 5)
         tagsCollectionView.clipsToBounds = true
         
-        tabBar.layer.cornerRadius = tabBar.layer.frame.size.height / 2
-        tabBar.clipsToBounds = true
         
         let bottomCorners:UIRectCorner =
         [.bottomLeft,.bottomRight] // apple says this gives smoother rounded corners
@@ -59,13 +59,10 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
         
         profileImageView.layer.masksToBounds = true
         profileImageView.layer.cornerRadius = profileImageView.frame.width/2.0
-        welcomeNameLabel.FontStyle(fontSize: 18, shadowRadius: 10, shadowOpacity: 0.5, shadowX: 4, shadowY: 4, fontFamily: "QuickSand-regular")
+        welcomeNameLabel.FontStyle(fontSize: 18, shadowRadius: 10, shadowOpacity: 0.5, shadowX: 4, shadowY: 4, fontFamily: "QuickSand-bold")
         whereAreYouTravellingTodayLabel.FontStyle(fontSize: 36, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 4, shadowY: 4, fontFamily: "QuickSand-medium")
         chooseDestinationButton.buttonShadow(shadowColor: .black, shadowX: 0, shadowY: 4, shadowOpacity: 0.25, shadowRadius: 10, cornerRadius: 9)
         chooseDestinationButton.buttonFontAndSize(fontFamily: "QuickSand", fontSize: 18)
-    }
-    @IBAction func tabBarClick(_ sender: UIButton) {
-        print(sender.tag)
     }
     // collection view below
     
@@ -81,6 +78,30 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
         tagsCell.dropShadow(shadowColor: .black, shadowX: 0, shadowY: 0, shadowOpacity: 0.5, shadowRadius: 10)
         return tagsCell
     }
+    
+
+    
+    @objc func scrollAutomatically(_ timer1: Timer) {
+           
+           if let coll  = tagsCollectionView {
+               for cell in coll.visibleCells {
+                   let indexPath: IndexPath? = coll.indexPath(for: cell)
+                   if ((indexPath?.row)!  < tags.count - 1){
+                       let indexPath1: IndexPath?
+                       indexPath1 = IndexPath.init(row: (indexPath?.row)! + Int(0.5), section: (indexPath?.section)!)
+                       
+                       coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
+                   }
+                   else{
+                       let indexPath1: IndexPath?
+                       indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
+                       coll.scrollToItem(at: indexPath1!, at: .left, animated: true)
+                   }
+                   
+               }
+           }
+           
+       }
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //
 //        let noOfCellsInRow = 3
