@@ -12,6 +12,26 @@ import UIKit
 
 extension UIView {
 
+    func addInnerShadoToVieww(innerShadowColor:UIColor,innerShadowX:Int,innerShadowY:Int,innerShadowOpacity:Float,innerShadowRadius:CGFloat) {
+            // Inner shadow things...
+            let innerShadow = CALayer()
+            innerShadow.frame = bounds
+            let radius = self.layer.cornerRadius
+            let path = UIBezierPath(roundedRect: innerShadow.bounds.insetBy(dx: 2, dy:2), cornerRadius:radius)
+            let cutout = UIBezierPath(roundedRect: innerShadow.bounds, cornerRadius:radius).reversing()
+            
+            path.append(cutout)
+            innerShadow.shadowPath = path.cgPath
+            innerShadow.masksToBounds = true
+            
+            // Shadow properties
+            innerShadow.shadowColor = innerShadowColor.cgColor
+            innerShadow.shadowOffset = CGSize(width: innerShadowX, height: innerShadowY)
+            innerShadow.shadowOpacity = innerShadowOpacity
+            innerShadow.shadowRadius = innerShadowRadius
+            innerShadow.cornerRadius = self.layer.cornerRadius
+            layer.addSublayer(innerShadow)
+    }
 
       // OUTPUT 1
 
@@ -23,6 +43,7 @@ extension UIView {
         self.layer.shadowRadius = shadowRadius
         self.layer.masksToBounds = false
     }
+    
     func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
         if #available(iOS 11.0, *) {
             clipsToBounds = true

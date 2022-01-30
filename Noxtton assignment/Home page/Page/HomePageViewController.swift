@@ -88,7 +88,7 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
                    let indexPath: IndexPath? = coll.indexPath(for: cell)
                    if ((indexPath?.row)!  < tags.count - 1){
                        let indexPath1: IndexPath?
-                       indexPath1 = IndexPath.init(row: (indexPath?.row)! + Int(0.5), section: (indexPath?.section)!)
+                       indexPath1 = IndexPath.init(row: (indexPath?.row)! + Int(1), section: (indexPath?.section)!)
                        
                        coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
                    }

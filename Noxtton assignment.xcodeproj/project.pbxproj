@@ -33,6 +33,10 @@
 		588DF69527A35BD900D052B8 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 588DF69427A35BD900D052B8 /* SideMenu */; };
 		588DF69827A35D0B00D052B8 /* menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 588DF69727A35D0B00D052B8 /* menu.storyboard */; };
 		588DF69A27A35D1900D052B8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588DF69927A35D1900D052B8 /* MenuViewController.swift */; };
+		588DF69E27A49E6900D052B8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588DF69D27A49E6900D052B8 /* SearchViewController.swift */; };
+		588DF6A027A49E7200D052B8 /* search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 588DF69F27A49E7200D052B8 /* search.storyboard */; };
+		588DF6A227A5E90D00D052B8 /* searchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588DF6A127A5E90D00D052B8 /* searchCollectionViewCell.swift */; };
+		588DF6A427A60D1400D052B8 /* recommendedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588DF6A327A60D1400D052B8 /* recommendedCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +66,10 @@
 		588DF69027A082E900D052B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		588DF69727A35D0B00D052B8 /* menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = menu.storyboard; sourceTree = "<group>"; };
 		588DF69927A35D1900D052B8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		588DF69D27A49E6900D052B8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		588DF69F27A49E7200D052B8 /* search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = search.storyboard; sourceTree = "<group>"; };
+		588DF6A127A5E90D00D052B8 /* searchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchCollectionViewCell.swift; sourceTree = "<group>"; };
+		588DF6A327A60D1400D052B8 /* recommendedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommendedCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,7 @@
 		5802F092278F0C5100296D2A /* Noxtton assignment */ = {
 			isa = PBXGroup;
 			children = (
+				588DF69C27A49CED00D052B8 /* Search */,
 				588DF68C27A0829600D052B8 /* Tab Bar */,
 				588DF68D27A082A300D052B8 /* Profile */,
 				586FF998279C522C0029BE7B /* Saved page */,
@@ -229,6 +238,17 @@
 			path = profile;
 			sourceTree = "<group>";
 		};
+		588DF69C27A49CED00D052B8 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				588DF69D27A49E6900D052B8 /* SearchViewController.swift */,
+				588DF69F27A49E7200D052B8 /* search.storyboard */,
+				588DF6A127A5E90D00D052B8 /* searchCollectionViewCell.swift */,
+				588DF6A327A60D1400D052B8 /* recommendedCollectionViewCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -299,6 +319,7 @@
 				5802F0AD278F336300296D2A /* QuickSand.ttf in Resources */,
 				588DF68F27A082D500D052B8 /* Profile.storyboard in Resources */,
 				5878663E2795FE2A00CB274E /* HomePage.storyboard in Resources */,
+				588DF6A027A49E7200D052B8 /* search.storyboard in Resources */,
 				586FF99A279C52510029BE7B /* Saved.storyboard in Resources */,
 				5802F0A0278F0C5200296D2A /* Assets.xcassets in Resources */,
 				588DF69827A35D0B00D052B8 /* menu.storyboard in Resources */,
@@ -320,10 +341,13 @@
 				5802F098278F0C5100296D2A /* ViewController.swift in Sources */,
 				5878663C2795FE2100CB274E /* HomePageViewController.swift in Sources */,
 				588DF69127A082E900D052B8 /* ProfileViewController.swift in Sources */,
+				588DF6A227A5E90D00D052B8 /* searchCollectionViewCell.swift in Sources */,
 				5802F09E278F0C5100296D2A /* Noxtton_assignment.xcdatamodeld in Sources */,
 				587866342792278F00CB274E /* RegisterViewController.swift in Sources */,
 				587866382794357B00CB274E /* VaccinesCollectionViewCell.swift in Sources */,
+				588DF6A427A60D1400D052B8 /* recommendedCollectionViewCell.swift in Sources */,
 				5802F094278F0C5100296D2A /* AppDelegate.swift in Sources */,
+				588DF69E27A49E6900D052B8 /* SearchViewController.swift in Sources */,
 				586FF99C279C525E0029BE7B /* SavedViewController.swift in Sources */,
 				586FF9A4279D9DEC0029BE7B /* TabBarController.swift in Sources */,
 				586FF9A6279DB5590029BE7B /* MySubscribitionsCollectionViewCell.swift in Sources */,
