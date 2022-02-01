@@ -10,6 +10,7 @@ import UIKit
 class RegisterViewController: UIViewController {
 
     
+    @IBOutlet weak var alreadyRegistered: UILabel!
     @IBOutlet weak var RegisterLabel: UILabel!
         
     @IBOutlet weak var usernameLabelRegister: UITextField!
@@ -28,6 +29,7 @@ class RegisterViewController: UIViewController {
     
     
     func registerDesign(){
+        alreadyRegistered.FontStyle(fontSize: 15, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 0, shadowY: 0, fontFamily: "QuickSand-light")
         
         confirmRegisterButton.buttonShadow(shadowColor: .gray, shadowX: 2, shadowY: 4, shadowOpacity: 0.3, shadowRadius: 4, cornerRadius: 15)
         confirmRegisterButton.buttonFontAndSize(fontFamily: "QuickSand-semibold", fontSize: 18)
@@ -79,6 +81,9 @@ class RegisterViewController: UIViewController {
         }
         
         
+    }
+    @IBAction func logInButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

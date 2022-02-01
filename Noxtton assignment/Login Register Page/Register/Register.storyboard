@@ -86,12 +86,38 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="confirm"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IB-5v-bG8">
+                                <rect key="frame" x="20" y="767" width="98" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="hqn-38-PZs"/>
+                                    <constraint firstAttribute="height" constant="35" id="uAw-rz-xal"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="log in"/>
+                                <connections>
+                                    <action selector="logInButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aeT-3y-Kuw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="already registered ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJ3-e0-JZV">
+                                <rect key="frame" x="47" y="738" width="150" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="L8K-1G-O6A"/>
+                                    <constraint firstAttribute="height" constant="21" id="Mer-PF-3xh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="1IB-5v-bG8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="2KY-RC-Lnx"/>
+                            <constraint firstItem="hJ3-e0-JZV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="47" id="CRa-e3-BE3"/>
                             <constraint firstItem="L8Q-mO-lGT" firstAttribute="top" secondItem="Tj8-15-05Z" secondAttribute="bottom" constant="30" id="IUa-z4-JvD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="o5K-tE-fD1" secondAttribute="trailing" constant="47" id="Irm-eM-zw7"/>
+                            <constraint firstItem="hJ3-e0-JZV" firstAttribute="top" secondItem="L8Q-mO-lGT" secondAttribute="bottom" constant="101" id="JHP-M0-5eI"/>
+                            <constraint firstItem="1IB-5v-bG8" firstAttribute="top" secondItem="hJ3-e0-JZV" secondAttribute="bottom" constant="8" symbolic="YES" id="JnT-t4-x6x"/>
                             <constraint firstItem="L8Q-mO-lGT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="118" id="MoM-f4-7Oz"/>
                             <constraint firstItem="o5K-tE-fD1" firstAttribute="top" secondItem="IRp-1e-1Mr" secondAttribute="bottom" constant="-30" id="NWs-SN-0Hi"/>
                             <constraint firstItem="Tj8-15-05Z" firstAttribute="top" secondItem="o5K-tE-fD1" secondAttribute="bottom" constant="25" id="PRp-vS-Vhr"/>
@@ -109,6 +135,7 @@
                     <navigationItem key="navigationItem" id="Ye1-Ym-Yvf"/>
                     <connections>
                         <outlet property="RegisterLabel" destination="Dv2-o5-rAw" id="Qq7-j9-mbG"/>
+                        <outlet property="alreadyRegistered" destination="hJ3-e0-JZV" id="DCw-zI-Miy"/>
                         <outlet property="confirmRegisterButton" destination="L8Q-mO-lGT" id="aKD-hJ-UWZ"/>
                         <outlet property="passwordLabelRegister" destination="7yy-IB-xLp" id="TnM-t0-YwU"/>
                         <outlet property="repeatPasswordLabelRegister" destination="yAd-wD-T8F" id="w4u-D6-IiA"/>

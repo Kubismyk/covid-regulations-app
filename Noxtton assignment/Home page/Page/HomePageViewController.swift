@@ -62,7 +62,8 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
         welcomeNameLabel.FontStyle(fontSize: 18, shadowRadius: 10, shadowOpacity: 0.5, shadowX: 4, shadowY: 4, fontFamily: "QuickSand-bold")
         whereAreYouTravellingTodayLabel.FontStyle(fontSize: 36, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 4, shadowY: 4, fontFamily: "QuickSand-medium")
         chooseDestinationButton.buttonShadow(shadowColor: .black, shadowX: 0, shadowY: 4, shadowOpacity: 0.25, shadowRadius: 10, cornerRadius: 9)
-        chooseDestinationButton.buttonFontAndSize(fontFamily: "QuickSand", fontSize: 18)
+        //chooseDestinationButton.buttonFontAndSize(fontFamily: "QuickSand", fontSize: 18)
+        chooseDestinationButton.titleLabel?.font = UIFont(name: "QuickSand-semibold", size: 20)
     }
     // collection view below
     
