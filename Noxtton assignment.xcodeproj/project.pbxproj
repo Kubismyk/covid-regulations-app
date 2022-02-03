@@ -16,6 +16,7 @@
 		5802F0A3278F0C5200296D2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5802F0A1278F0C5200296D2A /* LaunchScreen.storyboard */; };
 		5802F0AD278F336300296D2A /* QuickSand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5802F0AC278F336300296D2A /* QuickSand.ttf */; };
 		5802F0B0278F345000296D2A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5802F0AF278F345000296D2A /* Extensions.swift */; };
+		5852347227AB59180058DADA /* Shuffle in Frameworks */ = {isa = PBXBuildFile; productRef = 5852347127AB59180058DADA /* Shuffle */; };
 		586FF997279C45180029BE7B /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586FF996279C45180029BE7B /* TagsCollectionViewCell.swift */; };
 		586FF99A279C52510029BE7B /* Saved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586FF999279C52510029BE7B /* Saved.storyboard */; };
 		586FF99C279C525E0029BE7B /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586FF99B279C525E0029BE7B /* SavedViewController.swift */; };
@@ -77,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5852347227AB59180058DADA /* Shuffle in Frameworks */,
 				588DF69527A35BD900D052B8 /* SideMenu in Frameworks */,
 				587866412796EDF500CB274E /* Hero in Frameworks */,
 			);
@@ -268,6 +270,7 @@
 			packageProductDependencies = (
 				587866402796EDF500CB274E /* Hero */,
 				588DF69427A35BD900D052B8 /* SideMenu */,
+				5852347127AB59180058DADA /* Shuffle */,
 			);
 			productName = "Noxtton assignment";
 			productReference = 5802F090278F0C5100296D2A /* Noxtton assignment.app */;
@@ -300,6 +303,7 @@
 			packageReferences = (
 				5878663F2796EDF500CB274E /* XCRemoteSwiftPackageReference "Hero" */,
 				588DF69327A35BD900D052B8 /* XCRemoteSwiftPackageReference "SideMenu" */,
+				5852347027AB59180058DADA /* XCRemoteSwiftPackageReference "Shuffle" */,
 			);
 			productRefGroup = 5802F091278F0C5100296D2A /* Products */;
 			projectDirPath = "";
@@ -582,6 +586,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5852347027AB59180058DADA /* XCRemoteSwiftPackageReference "Shuffle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-gallagher/Shuffle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
 		5878663F2796EDF500CB274E /* XCRemoteSwiftPackageReference "Hero" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/HeroTransitions/Hero";
@@ -601,6 +613,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5852347127AB59180058DADA /* Shuffle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5852347027AB59180058DADA /* XCRemoteSwiftPackageReference "Shuffle" */;
+			productName = Shuffle;
+		};
 		587866402796EDF500CB274E /* Hero */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5878663F2796EDF500CB274E /* XCRemoteSwiftPackageReference "Hero" */;

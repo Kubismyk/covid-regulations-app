@@ -78,6 +78,9 @@
                                     <imageReference key="image" image="asdasd"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="chooseDestinationButtonClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2o9-aW-9a0"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IoQ-iq-fnN">
                                 <rect key="frame" x="20" y="308" width="373" height="32"/>
@@ -229,7 +232,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsj-Rt-Wl1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1851" y="426"/>
+            <point key="canvasLocation" x="1843" y="226"/>
         </scene>
         <!--Profile-->
         <scene sceneID="yLF-6S-5Ha">
@@ -241,12 +244,12 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lpt-WB-W86" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="575" y="501"/>
+            <point key="canvasLocation" x="1845" y="319"/>
         </scene>
         <!--search-->
         <scene sceneID="KEe-cF-dkv">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SearchViewController" storyboardName="search" id="iUV-Uk-QsF" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="search" id="iUV-Uk-QsF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="8O0-5p-rtQ">
                         <imageReference key="image" image="magnifyingglass.circle.fill" catalog="system"/>
                         <imageReference key="selectedImage" image="magnifyingglass.circle" catalog="system"/>
@@ -254,7 +257,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jie-iB-93p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086" y="514"/>
+            <point key="canvasLocation" x="1846" y="272"/>
         </scene>
     </scenes>
     <resources>

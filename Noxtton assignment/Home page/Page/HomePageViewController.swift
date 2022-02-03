@@ -6,19 +6,40 @@
 //
 
 import UIKit
-import Hero
+import Shuffle
 
-class HomePageViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout  {
+struct swipeCardData {
+    var mainImage: UIImage
+    var countryName: String
+}
+
+class HomePageViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,SwipeCardStackDataSource,SwipeCardStackDelegate  {
     
-    lazy var greenView: UIView = {
-        let v = UIView()
-        v.backgroundColor = .green
-        return v
-    }()
+    
+    func cardStack(_ cardStack: SwipeCardStack, cardForIndexAt index: Int) -> SwipeCard {
+        return card1(index: array1[index])
+    }
+    
+    func numberOfCards(in cardStack: SwipeCardStack) -> Int {
+        return array1.count
+    }
+    
+    let cardStack = SwipeCardStack()
+    
+    var array1:[swipeCardData] = [
+        swipeCardData(mainImage: UIImage(named: "tbtbtb")!, countryName: "Georgia"),
+        swipeCardData(mainImage: UIImage(named: "tbtbtb")!, countryName: "Finland"),
+        swipeCardData(mainImage: UIImage(named: "tbtbtb")!, countryName: "Russia")
+    ]
+    
+    
     
     
     var tags:[String] = ["#Sunny","#Beach","#Snow","#Mountain","#Sea"]
     
+    
+    let bottomCorners:UIRectCorner =
+    [.bottomLeft,.bottomRight] // apple says this gives smoother rounded corners
     
     @IBOutlet weak var profileImageView: UIImageView!
     
@@ -39,7 +60,10 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        view.addSubview(cardStack)
+        cardStack.dataSource = self
+        cardStack.delegate = self
+        cardStack.frame = destinationBox.frame
         
         Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
         
@@ -51,8 +75,6 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
         tagsCollectionView.clipsToBounds = true
         
         
-        let bottomCorners:UIRectCorner =
-        [.bottomLeft,.bottomRight] // apple says this gives smoother rounded corners
 
         destinationBox.roundCorners(bottomCorners, radius: 58)
         destinationBox.dropShadow(shadowColor: .black, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 7)
@@ -65,6 +87,16 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
         //chooseDestinationButton.buttonFontAndSize(fontFamily: "QuickSand", fontSize: 18)
         chooseDestinationButton.titleLabel?.font = UIFont(name: "QuickSand-semibold", size: 20)
     }
+    
+    
+    
+    
+    @IBAction func chooseDestinationButtonClick(_ sender: UIButton) {
+        self.tabBarController!.selectedIndex = 3 - 1
+    }
+    
+    
+    
     // collection view below
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -103,19 +135,104 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
            }
            
        }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        let noOfCellsInRow = 3
-//
-//        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-//
-//        let totalSpace = flowLayout.sectionInset.left
-//            + flowLayout.sectionInset.right
-//            + (flowLayout.minimumInteritemSpacing * CGFloat(noOfCellsInRow - 1))
-//
-//        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(noOfCellsInRow))
-//
-//        return CGSize(width: size, height: size)
-//    }
+    
+    
+    func card1(index: swipeCardData) -> SwipeCard {
+        let card = SwipeCard()
+        card.swipeDirections = [.left, .right, .up]
+        card.layer.cornerRadius = 12
+        card.roundCorners(bottomCorners, radius: 58)
+        card.layer.shadowOffset = CGSize.zero
+        card.layer.shadowOpacity = 1.0
+        card.layer.shadowRadius = 6.0
+        card.layer.masksToBounds =  true
+        //card.layer.borderWidth = 2
+        
+        let view_bg = UIView(frame: CGRect(x: 0, y: 0, width: destinationBox.frame.size.width, height: destinationBox.frame.height))
+        card.content = view_bg
+        view_bg.layer.cornerRadius = 12
+        view_bg.clipsToBounds = true
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
+            
+            let view_bg1 = UIView(frame: CGRect(x: 0, y: 0, width: view_bg.frame.size.width, height: view_bg.frame.size.height))
+            
+            view_bg.backgroundColor = UIColor(named: "InnerShadowPurple")
+            card.content?.addSubview(view_bg1)
+            
+            let img_card_type = UIImageView(frame: CGRect.zero)
+            img_card_type.contentMode = .scaleAspectFit
+            img_card_type.translatesAutoresizingMaskIntoConstraints = false
+            img_card_type.isHidden = true
+            view_bg1.addSubview(img_card_type)
+            img_card_type.centerXAnchor.constraint(equalToSystemSpacingAfter: view_bg1.centerXAnchor, multiplier: 1).isActive = true
+            img_card_type.topAnchor.constraint(equalTo: view_bg1.topAnchor, constant: 0).isActive = true
+            img_card_type.widthAnchor.constraint(equalToConstant: 100).isActive = true
+            
+            
+            let img_comapny = UIImageView(frame: CGRect(x: 24, y: 24, width: view_bg.frame.size.width, height: 100))
+            img_comapny.image = index.mainImage
+            img_comapny.translatesAutoresizingMaskIntoConstraints = false
+            //img_comapny.layer.cornerRadius = 50
+        
+            img_comapny.layer.shadowOffset = CGSize.zero
+            img_comapny.layer.shadowOpacity = 1.0
+            img_comapny.layer.shadowRadius = 6.0
+            img_comapny.layer.masksToBounds =  false
+            img_comapny.clipsToBounds = true
+            view_bg1.addSubview(img_comapny)
+            img_comapny.topAnchor.constraint(equalTo: img_card_type.bottomAnchor, constant: 0).isActive = true
+            img_comapny.leadingAnchor.constraint(equalTo: view_bg1.leadingAnchor, constant: 0).isActive = true
+            img_comapny.heightAnchor.constraint(equalToConstant: view_bg1.frame.size.height - 70).isActive = true
+            img_comapny.widthAnchor.constraint(equalToConstant: view_bg1.frame.size.width).isActive = true
+            
+            
+            let countryName = UILabel(frame: CGRect.zero)
+            countryName.text = index.countryName
+            //countryName.font = countryName.font.withSize(25)
+            countryName.FontStyle(fontSize: 30, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 0, shadowY: 0, fontFamily: "QuickSand-bold")
+            countryName.textColor = .white
+            countryName.translatesAutoresizingMaskIntoConstraints = false
+            countryName.numberOfLines = 0
+            view_bg1.addSubview(countryName)
+            countryName.topAnchor.constraint(equalTo: img_comapny.bottomAnchor, constant: 15).isActive = true
+            countryName.leadingAnchor.constraint(equalTo: view_bg1.leadingAnchor, constant: 34).isActive = true
+            countryName.trailingAnchor.constraint(equalTo: view_bg1.trailingAnchor, constant: -24).isActive = true
+            
+        }
+        let leftOverlay = UIImageView()
+        let img_dislike = UIImageView(frame: CGRect(x: view_bg.frame.size.width - 132, y: 32, width: 100, height: 100))
+        img_dislike.image = UIImage(named: "dislike")
+        leftOverlay.addSubview(img_dislike)
+        
+        let rightOverlay = UIView()
+        let img_like = UIImageView(frame: CGRect(x: 32, y: 32, width: 100, height: 100))
+        img_like.image = UIImage(named: "Image")
+        rightOverlay.addSubview(img_like)
+        
+        let upOverlay = UIView()
+        let img_saved = UIImageView(frame: CGRect(x: (view_bg.frame.size.width - 100)/2, y: (view_bg.frame.size.height)/2, width: 100, height: 100))
+        img_saved.image = UIImage(named: "ic_save")
+        upOverlay.addSubview(img_saved)
+        
+        card.setOverlays([.left: leftOverlay, .right: rightOverlay, .up: upOverlay])
+        return card
+    }
+        
+        
+        
+
+        func cardStack(_ cardStack: SwipeCardStack, didSelectCardAt index: Int){
+            print("selected card")
+        }
+        func cardStack(_ cardStack: SwipeCardStack, didSwipeCardAt index: Int, with direction: SwipeDirection){
+            print("a")
+        }
+        func cardStack(_ cardStack: SwipeCardStack, didUndoCardAt index: Int, from direction: SwipeDirection) {
+            print("b")
+        }
+        func didSwipeAllCards(_ cardStack: SwipeCardStack){
+            print("hell")
+        }
 
 }
