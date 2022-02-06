@@ -16,6 +16,6 @@ class searchCollectionViewCell: UICollectionViewCell {
     func config(data:SearchCollectionViewData){
         self.headerTitle.text = data.header
         self.infoLabel.text = data.information
-        self.countryImage.image = data.image
+        //self.countryImage.image = data.image
     }
 }

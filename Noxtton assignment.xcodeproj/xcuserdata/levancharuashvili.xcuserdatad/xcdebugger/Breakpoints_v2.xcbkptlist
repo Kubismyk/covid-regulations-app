@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9E48F89A-6BDE-4092-B1AC-155B9DDB99F2"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0CB3FA0B-BA66-44B5-8564-CE5B6529A939"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Noxtton assignment/Search/recommendedCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "recommendedCollectionViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "0CB3FA0B-BA66-44B5-8564-CE5B6529A939 - 4e3462a707b6c978"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Noxtton_assignment.recommendedCollectionViewCell.__allocating_init(frame: __C.CGRect) -&gt; Noxtton_assignment.recommendedCollectionViewCell"
+                  moduleName = "Noxtton assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levancharuashvili/covid-regulations-app/Noxtton%20assignment/Search/recommendedCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "0CB3FA0B-BA66-44B5-8564-CE5B6529A939 - 61bedfecc4e92603"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Noxtton_assignment.recommendedCollectionViewCell.init(frame: __C.CGRect) -&gt; Noxtton_assignment.recommendedCollectionViewCell"
+                  moduleName = "Noxtton assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levancharuashvili/covid-regulations-app/Noxtton%20assignment/Search/recommendedCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "0CB3FA0B-BA66-44B5-8564-CE5B6529A939 - 1ec3e6ed16f2a6db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Noxtton_assignment.recommendedCollectionViewCell.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Noxtton_assignment.recommendedCollectionViewCell&gt;"
+                  moduleName = "Noxtton assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levancharuashvili/covid-regulations-app/Noxtton%20assignment/Search/recommendedCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "0CB3FA0B-BA66-44B5-8564-CE5B6529A939 - 9fa5027217f0d53b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Noxtton_assignment.recommendedCollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Noxtton_assignment.recommendedCollectionViewCell&gt;"
+                  moduleName = "Noxtton assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levancharuashvili/covid-regulations-app/Noxtton%20assignment/Search/recommendedCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "0CB3FA0B-BA66-44B5-8564-CE5B6529A939 - 40352849dd9098bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Noxtton_assignment.recommendedCollectionViewCell.__deallocating_deinit"
+                  moduleName = "Noxtton assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levancharuashvili/covid-regulations-app/Noxtton%20assignment/Search/recommendedCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

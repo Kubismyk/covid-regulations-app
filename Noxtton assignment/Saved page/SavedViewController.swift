@@ -29,7 +29,7 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
         super.viewDidLoad()
         savedItemsCollectionView.dataSource = self
         savedItemsCollectionView.delegate = self
-        mySubscribitionsLabel.FontStyle(fontSize: 34, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 2, shadowY: 2, fontFamily: "Quicksand-bold")
+        mySubscribitionsLabel.FontStyle(fontSize: 34, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 2, shadowY: 2, fontFamily: "QuickSand-bold")
         mySubscribitionsLabel.textColor = UIColor(patternImage: UIImage(named: "gradient")!)
     }
     

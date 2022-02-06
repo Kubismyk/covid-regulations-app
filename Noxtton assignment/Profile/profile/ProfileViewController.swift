@@ -53,5 +53,51 @@ class ProfileViewController: UIViewController {
         myInfoLabel.FontStyle(fontSize: 30, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 2, shadowY: 0, fontFamily: "QuickSand-bold")
     }
     
+    
+    @IBAction func changeProfilePicture(_ sender: Any) {
+        let alert = UIAlertController(title: "Profile Picture", message: "Please Select an Option", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "choose picture from library", style: .default , handler:{ (UIAlertAction)in
+            let vc = UIImagePickerController()
+            vc.sourceType = .photoLibrary
+            vc.delegate = self
+            vc.allowsEditing = true
+            self.present(vc,animated: true)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "take picture", style: .default , handler:{ (UIAlertAction)in
+            print("User click Edit button")
+        }))
 
+        alert.addAction(UIAlertAction(title: "remove profile picutre", style: .default , handler:{ (UIAlertAction)in
+            print("User click Delete button")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+            print("User click Dismiss button")
+        }))
+
+        
+        //uncomment for iPad Support
+        //alert.popoverPresentationController?.sourceView = self.view
+
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
+    }
+    
+
+}
+
+
+extension ProfileViewController:UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedPicture")] as? UIImage {
+            self.mainProfilePicImage.image = image
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
 }

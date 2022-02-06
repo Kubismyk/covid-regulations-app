@@ -146,6 +146,7 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
         card.layer.shadowOpacity = 1.0
         card.layer.shadowRadius = 6.0
         card.layer.masksToBounds =  true
+        card.frame = destinationBox.frame
         //card.layer.borderWidth = 2
         
         let view_bg = UIView(frame: CGRect(x: 0, y: 0, width: destinationBox.frame.size.width, height: destinationBox.frame.height))
@@ -159,6 +160,7 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
             
             view_bg.backgroundColor = UIColor(named: "InnerShadowPurple")
             card.content?.addSubview(view_bg1)
+
             
             let img_card_type = UIImageView(frame: CGRect.zero)
             img_card_type.contentMode = .scaleAspectFit
@@ -185,6 +187,7 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
             img_comapny.leadingAnchor.constraint(equalTo: view_bg1.leadingAnchor, constant: 0).isActive = true
             img_comapny.heightAnchor.constraint(equalToConstant: view_bg1.frame.size.height - 70).isActive = true
             img_comapny.widthAnchor.constraint(equalToConstant: view_bg1.frame.size.width).isActive = true
+            
             
             
             let countryName = UILabel(frame: CGRect.zero)
