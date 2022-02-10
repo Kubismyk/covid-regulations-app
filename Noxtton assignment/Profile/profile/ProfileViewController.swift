@@ -65,10 +65,6 @@ class ProfileViewController: UIViewController {
             self.present(vc,animated: true)
         }))
         
-        alert.addAction(UIAlertAction(title: "take picture", style: .default , handler:{ (UIAlertAction)in
-            print("User click Edit button")
-        }))
-
         alert.addAction(UIAlertAction(title: "remove profile picutre", style: .default , handler:{ (UIAlertAction)in
             print("User click Delete button")
         }))

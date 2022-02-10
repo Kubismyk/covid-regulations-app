@@ -7,6 +7,10 @@
 import Foundation
 import UIKit
 
+extension Notification.Name {
+    static let AddToSaves = Notification.Name("add_to_saves")
+}
+
 
 // UI VIEW
 

@@ -13,8 +13,8 @@ class MySubscribitionsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cityNCountryName: UILabel!
     @IBOutlet weak var learnMore: UILabel!
     
-    func configure(with items:SubscribitionCollectionViewStructure){
-        cityImage.image = items.cityImage
-        cityNCountryName.text = items.CityNCountryName
+    func configure(with items:SearchCollectionViewData){
+        cityImage.image = items.image
+        cityNCountryName.text = items.header
     }
 }

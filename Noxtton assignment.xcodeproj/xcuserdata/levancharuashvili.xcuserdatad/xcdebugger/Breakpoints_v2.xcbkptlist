@@ -97,5 +97,258 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "01D90FE2-4FCF-4BBE-ACA1-935CB612845D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Noxtton assignment/Search/MainSheetViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "MainSheetViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D15F15C1-9A0B-4587-93A4-60DC17D8C546"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Noxtton assignment/Search/searchCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "config(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D67604AA-C660-42CE-8EE7-A4653DB8BB66"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Noxtton assignment/Search/searchCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "searchCollectionViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "D67604AA-C660-42CE-8EE7-A4653DB8BB66 - 59ecd2a2ffa5d903"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Noxtton_assignment.searchCollectionViewCell.__allocating_init(frame: __C.CGRect) -&gt; Noxtton_assignment.searchCollectionViewCell"
+                  moduleName = "Noxtton assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levancharuashvili/covid-regulations-app/Noxtton%20assignment/Search/searchCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "D67604AA-C660-42CE-8EE7-A4653DB8BB66 - 9d057fdd3b1db00a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Noxtton_assignment.searchCollectionViewCell.init(frame: __C.CGRect) -&gt; Noxtton_assignment.searchCollectionViewCell"
+                  moduleName = "Noxtton assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levancharuashvili/covid-regulations-app/Noxtton%20assignment/Search/searchCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "D67604AA-C660-42CE-8EE7-A4653DB8BB66 - 7b6e47c5a31d8b5b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Noxtton_assignment.searchCollectionViewCell.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Noxtton_assignment.searchCollectionViewCell&gt;"
+                  moduleName = "Noxtton assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levancharuashvili/covid-regulations-app/Noxtton%20assignment/Search/searchCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "D67604AA-C660-42CE-8EE7-A4653DB8BB66 - d0f04749ce7d446f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Noxtton_assignment.searchCollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Noxtton_assignment.searchCollectionViewCell&gt;"
+                  moduleName = "Noxtton assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levancharuashvili/covid-regulations-app/Noxtton%20assignment/Search/searchCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "D67604AA-C660-42CE-8EE7-A4653DB8BB66 - fb6dee2bc9d9d738"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Noxtton_assignment.searchCollectionViewCell.__deallocating_deinit"
+                  moduleName = "Noxtton assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levancharuashvili/covid-regulations-app/Noxtton%20assignment/Search/searchCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2647CDFC-B6D5-4FEC-B924-0671C8B5BD37"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Noxtton assignment/Search/searchCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "searchCollectionViewCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A7A6FB9E-A2D2-4E5C-BC7B-F470DC34FBD9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Noxtton assignment/Search/searchCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "likeButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0E998929-1097-4044-B6DD-6F17C7458CD1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Noxtton assignment/Saved page/SavedViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "notificationRecieved(notification:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "295C041B-63FF-4F06-9E32-37D4E84B89D3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Noxtton assignment/Saved page/SavedViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "notificationRecieved(notification:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "295C041B-63FF-4F06-9E32-37D4E84B89D3 - 590fd4d152ba6f4e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Noxtton_assignment.SavedViewController.notificationRecieved(notification: Foundation.Notification) -&gt; ()"
+                  moduleName = "Noxtton assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levancharuashvili/covid-regulations-app/Noxtton%20assignment/Saved%20page/SavedViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "444">
+               </Location>
+               <Location
+                  uuid = "295C041B-63FF-4F06-9E32-37D4E84B89D3 - 590fd4d152ba6f4e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Noxtton_assignment.SavedViewController.notificationRecieved(notification: Foundation.Notification) -&gt; ()"
+                  moduleName = "Noxtton assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levancharuashvili/covid-regulations-app/Noxtton%20assignment/Saved%20page/SavedViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "492">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C612CA27-E887-4A81-9A99-39AC6F6DBA72"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Noxtton assignment/Saved page/SavedViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "notificationRecieved(notification:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ACF8652D-B435-4EAF-83AA-52630139987E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Noxtton assignment/Saved page/SavedViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "notificationRecieved(notification:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

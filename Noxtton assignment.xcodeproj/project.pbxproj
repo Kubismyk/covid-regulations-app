@@ -16,6 +16,7 @@
 		5802F0A3278F0C5200296D2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5802F0A1278F0C5200296D2A /* LaunchScreen.storyboard */; };
 		5802F0AD278F336300296D2A /* QuickSand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5802F0AC278F336300296D2A /* QuickSand.ttf */; };
 		5802F0B0278F345000296D2A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5802F0AF278F345000296D2A /* Extensions.swift */; };
+		581BEC7D27AFEB15006FE943 /* MainSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581BEC7C27AFEB14006FE943 /* MainSheetViewController.swift */; };
 		5852347227AB59180058DADA /* Shuffle in Frameworks */ = {isa = PBXBuildFile; productRef = 5852347127AB59180058DADA /* Shuffle */; };
 		586FF997279C45180029BE7B /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586FF996279C45180029BE7B /* TagsCollectionViewCell.swift */; };
 		586FF99A279C52510029BE7B /* Saved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586FF999279C52510029BE7B /* Saved.storyboard */; };
@@ -52,6 +53,7 @@
 		5802F0A4278F0C5200296D2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5802F0AC278F336300296D2A /* QuickSand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = QuickSand.ttf; sourceTree = "<group>"; };
 		5802F0AF278F345000296D2A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		581BEC7C27AFEB14006FE943 /* MainSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSheetViewController.swift; sourceTree = "<group>"; };
 		586FF996279C45180029BE7B /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
 		586FF999279C52510029BE7B /* Saved.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Saved.storyboard; sourceTree = "<group>"; };
 		586FF99B279C525E0029BE7B /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			children = (
 				588DF69D27A49E6900D052B8 /* SearchViewController.swift */,
 				588DF69F27A49E7200D052B8 /* search.storyboard */,
+				581BEC7C27AFEB14006FE943 /* MainSheetViewController.swift */,
 				588DF6A127A5E90D00D052B8 /* searchCollectionViewCell.swift */,
 				588DF6A327A60D1400D052B8 /* recommendedCollectionViewCell.swift */,
 			);
@@ -345,6 +348,7 @@
 				5802F098278F0C5100296D2A /* ViewController.swift in Sources */,
 				5878663C2795FE2100CB274E /* HomePageViewController.swift in Sources */,
 				588DF69127A082E900D052B8 /* ProfileViewController.swift in Sources */,
+				581BEC7D27AFEB15006FE943 /* MainSheetViewController.swift in Sources */,
 				588DF6A227A5E90D00D052B8 /* searchCollectionViewCell.swift in Sources */,
 				5802F09E278F0C5100296D2A /* Noxtton_assignment.xcdatamodeld in Sources */,
 				587866342792278F00CB274E /* RegisterViewController.swift in Sources */,

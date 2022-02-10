@@ -16,6 +16,12 @@ class searchCollectionViewCell: UICollectionViewCell {
     func config(data:SearchCollectionViewData){
         self.headerTitle.text = data.header
         self.infoLabel.text = data.information
+        self.countryImage.image = data.image
         //self.countryImage.image = data.image
+    }
+    
+    @IBAction func likeButton(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .AddToSaves, object: self,userInfo: ["header":self.headerTitle.text!,"infoLabel":self.infoLabel.text!,"image":self.countryImage.image!])
+        print("hello2")
     }
 }

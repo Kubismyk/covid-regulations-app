@@ -35,7 +35,7 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
     
     
     
-    var tags:[String] = ["#Sunny","#Beach","#Snow","#Mountain","#Sea"]
+    var tags:[String] = ["#Sunny","#Beach","#Snow","#Mountain","#Sea","#Rainy"]
     
     
     let bottomCorners:UIRectCorner =

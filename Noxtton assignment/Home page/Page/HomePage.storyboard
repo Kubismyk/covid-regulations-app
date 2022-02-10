@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19115.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ljW-wV-8R4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ljW-wV-8R4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -19,11 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HFt-jh-tGm">
-                                <rect key="frame" x="-8" y="707" width="430" height="280"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="280" id="8YA-ng-cz6"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HFt-jh-tGm">
+                                <rect key="frame" x="-20" y="707" width="454" height="249"/>
                                 <imageReference key="image" image="homeBottom"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Trh-F0-Mxq">
@@ -146,11 +143,11 @@
                         <constraints>
                             <constraint firstItem="I8j-cS-Y0Y" firstAttribute="top" secondItem="yD6-nB-Xc1" secondAttribute="bottom" constant="17" id="7yr-fl-xRS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="IoQ-iq-fnN" secondAttribute="trailing" constant="21" id="8s8-hX-KbY"/>
-                            <constraint firstItem="HFt-jh-tGm" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" constant="-28" id="9Co-Ah-coJ"/>
                             <constraint firstItem="fym-pF-wkw" firstAttribute="top" secondItem="Trh-F0-Mxq" secondAttribute="bottom" constant="11" id="9M0-IG-Ik9"/>
-                            <constraint firstItem="bqP-Gc-Ob6" firstAttribute="centerX" secondItem="HFt-jh-tGm" secondAttribute="centerX" id="Ckl-4v-9wZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yD6-nB-Xc1" secondAttribute="trailing" constant="21" id="DXg-Dy-Fb2"/>
+                            <constraint firstAttribute="trailing" secondItem="HFt-jh-tGm" secondAttribute="trailing" constant="-20" id="HfU-Ea-e0l"/>
                             <constraint firstItem="bqP-Gc-Ob6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="21" id="Hk9-Zh-UIK"/>
+                            <constraint firstAttribute="bottom" secondItem="HFt-jh-tGm" secondAttribute="bottom" constant="-60" id="L8C-w1-e3j"/>
                             <constraint firstItem="bqP-Gc-Ob6" firstAttribute="top" secondItem="IoQ-iq-fnN" secondAttribute="bottom" constant="21" id="LIn-2r-VCS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eeg-mX-q7w" secondAttribute="trailing" constant="16" id="O92-6X-L1m"/>
                             <constraint firstItem="eeg-mX-q7w" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="OUx-KC-IOz"/>
@@ -165,10 +162,10 @@
                             <constraint firstItem="I8j-cS-Y0Y" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="cbO-2m-sxY"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bqP-Gc-Ob6" secondAttribute="trailing" constant="21" id="jvZ-1o-NYy"/>
                             <constraint firstItem="Trh-F0-Mxq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="21" id="m01-qr-gFI"/>
-                            <constraint firstItem="HFt-jh-tGm" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="707" id="oKj-pH-c3R"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="I8j-cS-Y0Y" secondAttribute="trailing" constant="20" id="tO2-17-cV8"/>
                             <constraint firstItem="IoQ-iq-fnN" firstAttribute="top" secondItem="I8j-cS-Y0Y" secondAttribute="bottom" constant="17" id="tmo-0c-JoJ"/>
                             <constraint firstItem="IoQ-iq-fnN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="wj7-Nt-VuB"/>
+                            <constraint firstItem="HFt-jh-tGm" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="-20" id="zxk-Zt-nqE"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="Uac-e6-URZ">
