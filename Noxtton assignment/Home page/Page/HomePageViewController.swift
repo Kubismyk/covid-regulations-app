@@ -8,34 +8,33 @@
 import UIKit
 import Shuffle
 
-struct swipeCardData {
-    var mainImage: UIImage
-    var countryName: String
-}
+//struct SearchCollectionViewData {
+//    var mainImage: UIImage
+//    var countryName: String
+//}
 
 class HomePageViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,SwipeCardStackDataSource,SwipeCardStackDelegate  {
     
     
     func cardStack(_ cardStack: SwipeCardStack, cardForIndexAt index: Int) -> SwipeCard {
-        return card1(index: array1[index])
+        return card1(index: array3[index])
     }
     
     func numberOfCards(in cardStack: SwipeCardStack) -> Int {
-        return array1.count
+        return array3.count
     }
     
     let cardStack = SwipeCardStack()
     
-    var array1:[swipeCardData] = [
-        swipeCardData(mainImage: UIImage(named: "tbtbtb")!, countryName: "Georgia"),
-        swipeCardData(mainImage: UIImage(named: "tbtbtb")!, countryName: "Finland"),
-        swipeCardData(mainImage: UIImage(named: "tbtbtb")!, countryName: "Russia")
+    
+    var array3:[SearchCollectionViewData] = [
+        SearchCollectionViewData(header: "Georgia,Tbilisi Airport", information: "Georgia is located between Asia and Europe and occupies a land area of 69,700 square kilometres, bordered by the Black Sea to the west, Turkey to the southwest, Azerbaijan to the east, Russia to the north, and Armenia to the south. ... Georgian is the official language of Georgia, and it is spoken by 71% of the population.", image: UIImage(named: "tbtbtb")!),        SearchCollectionViewData(header: "Finlad,Geneva Airport", information: "Georgia is located between Asia and Europe and occupies a land area of 69,700 square kilometres, bordered by the Black Sea to the west, Turkey to the southwest, Azerbaijan to the east, Russia to the north, and Armenia to the south. ... Georgian is the official language of Georgia, and it is spoken by 71% of the population.", image: UIImage(named: "tbtbtb")!)
     ]
     
-    
-    
-    
     var tags:[String] = ["#Sunny","#Beach","#Snow","#Mountain","#Sea","#Rainy"]
+    
+    var a:String = "asd"
+    
     
     
     let bottomCorners:UIRectCorner =
@@ -137,7 +136,7 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
        }
     
     
-    func card1(index: swipeCardData) -> SwipeCard {
+    func card1(index: SearchCollectionViewData) -> SwipeCard {
         let card = SwipeCard()
         card.swipeDirections = [.left, .right, .up]
         card.layer.cornerRadius = 12
@@ -149,14 +148,15 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
         card.frame = destinationBox.frame
         //card.layer.borderWidth = 2
         
-        let view_bg = UIView(frame: CGRect(x: 0, y: 0, width: destinationBox.frame.size.width, height: destinationBox.frame.height))
+        
+        let view_bg = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 10))
         card.content = view_bg
         view_bg.layer.cornerRadius = 12
         view_bg.clipsToBounds = true
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
             
-            let view_bg1 = UIView(frame: CGRect(x: 0, y: 0, width: view_bg.frame.size.width, height: view_bg.frame.size.height))
+            let view_bg1 = UIView(frame: CGRect(x: 0, y: 0, width: destinationBox.frame.size.width, height: destinationBox.frame.size.height))
             
             view_bg.backgroundColor = UIColor(named: "InnerShadowPurple")
             card.content?.addSubview(view_bg1)
@@ -171,11 +171,16 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
             img_card_type.topAnchor.constraint(equalTo: view_bg1.topAnchor, constant: 0).isActive = true
             img_card_type.widthAnchor.constraint(equalToConstant: 100).isActive = true
             
+            view_bg.centerXAnchor.constraint(equalToSystemSpacingAfter: destinationBox.centerXAnchor, multiplier: 1).isActive = true
+            view_bg.centerYAnchor.constraint(equalToSystemSpacingBelow: destinationBox.centerYAnchor, multiplier: 1).isActive = true
+            view_bg.rightAnchor.constraint(equalTo: destinationBox.rightAnchor, constant: 1).isActive = true
+            view_bg.leftAnchor.constraint(equalTo: destinationBox.leftAnchor, constant: 1).isActive = true
+            view_bg.bottomAnchor.constraint(equalTo: destinationBox.bottomAnchor, constant: 1).isActive = true
             
-            let img_comapny = UIImageView(frame: CGRect(x: 24, y: 24, width: view_bg.frame.size.width, height: 100))
-            img_comapny.image = index.mainImage
+            
+            let img_comapny = UIImageView(frame: CGRect(x: 0, y: 0, width: view_bg.frame.size.width, height: 100))
+            img_comapny.image = index.image
             img_comapny.translatesAutoresizingMaskIntoConstraints = false
-            //img_comapny.layer.cornerRadius = 50
         
             img_comapny.layer.shadowOffset = CGSize.zero
             img_comapny.layer.shadowOpacity = 1.0
@@ -191,7 +196,7 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
             
             
             let countryName = UILabel(frame: CGRect.zero)
-            countryName.text = index.countryName
+            countryName.text = index.header
             //countryName.font = countryName.font.withSize(25)
             countryName.FontStyle(fontSize: 30, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 0, shadowY: 0, fontFamily: "QuickSand-bold")
             countryName.textColor = .white
@@ -201,7 +206,6 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
             countryName.topAnchor.constraint(equalTo: img_comapny.bottomAnchor, constant: 15).isActive = true
             countryName.leadingAnchor.constraint(equalTo: view_bg1.leadingAnchor, constant: 34).isActive = true
             countryName.trailingAnchor.constraint(equalTo: view_bg1.trailingAnchor, constant: -24).isActive = true
-            
         }
         let leftOverlay = UIImageView()
         let img_dislike = UIImageView(frame: CGRect(x: view_bg.frame.size.width - 132, y: 32, width: 100, height: 100))
@@ -229,7 +233,7 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
             print("selected card")
         }
         func cardStack(_ cardStack: SwipeCardStack, didSwipeCardAt index: Int, with direction: SwipeDirection){
-            print("a")
+//            NotificationCenter.default.post(name: .AddToSavesFromShuffle, object: self,userInfo: ["header":self.headerTitle.text!,"infoLabel":self.infoLabel.text!,"image":self.countryImage.image!])
         }
         func cardStack(_ cardStack: SwipeCardStack, didUndoCardAt index: Int, from direction: SwipeDirection) {
             print("b")

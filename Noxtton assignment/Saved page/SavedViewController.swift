@@ -26,19 +26,18 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
     @IBOutlet weak var savedItemsCollectionView: UICollectionView!
     
     @IBOutlet weak var mySubscribitionsLabel: UILabel!
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationRecieved), name: .AddToSaves, object: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         savedItemsCollectionView.dataSource = self
         savedItemsCollectionView.delegate = self
         mySubscribitionsLabel.FontStyle(fontSize: 34, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 2, shadowY: 2, fontFamily: "QuickSand-bold")
         mySubscribitionsLabel.textColor = UIColor(patternImage: UIImage(named: "gradient")!)
+        savedItemsCollectionView.reloadData()
         
-        
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        NotificationCenter.default.addObserver(self, selector: #selector(notificationRecieved), name: .AddToSaves, object: nil)
     }
     
     @objc func notificationRecieved(notification: Notification){
@@ -61,12 +60,10 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let countryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MySubscribitionsCollectionViewCell
         countryCell.configure(with: savedArray[indexPath.row])
-        //countryCell.dropShadow(shadowColor: .purple, shadowX: 2, shadowY: 2, shadowOpacity: 0.25, shadowRadius: 10)
         
         countryCell.layer.cornerRadius = 10
         countryCell.layer.borderWidth = 1.0
         countryCell.layer.borderColor = UIColor.lightGray.cgColor
-
         countryCell.layer.backgroundColor = UIColor.white.cgColor
         countryCell.layer.shadowColor = UIColor.gray.cgColor
         countryCell.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
@@ -79,7 +76,6 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
         countryCell.learnMore.FontStyle(fontSize: 20, shadowRadius: 5, shadowOpacity: 0.25, shadowX: 2, shadowY: 0, fontFamily: "QuickSand-semibold")
         countryCell.layer.cornerRadius = 10
         countryCell.layer.borderWidth = 1.0
-
         countryCell.layer.borderColor = UIColor.clear.cgColor
         //countryCell.layer.masksToBounds = true
 
@@ -98,7 +94,7 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
         
         self.present(backDropActionSheet,animated: true,completion: nil)
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 100)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: collectionView.frame.size.width - 300, height: collectionView.frame.size.height/2)
+//    }
 }

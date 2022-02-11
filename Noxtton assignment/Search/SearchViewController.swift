@@ -23,39 +23,19 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
     
 
     @IBOutlet weak var collectionView: UICollectionView!
-//    @IBOutlet weak var recommendedCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(notificationRecieved), name: .AddToSaves, object: nil)
-//        collectionView.reloadData()
-        
-        
-        
 
-    }
-    
-    @objc func notificationRecieved(notification: Notification){
-//        collectionView.reloadData()
-//        guard let userInfo = notification.userInfo,
-//              let header = userInfo["header"] as? String,
-//              let infoLabel = userInfo["infoLabel"] as? String,
-//              let image = userInfo["image"] as? UIImage else { return }
-//        let receivedData = SearchCollectionViewData(header: header, information: infoLabel, image: image)
-//        array2.append(receivedData)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "searchCell", for: indexPath) as! searchCollectionViewCell
             cell.config(data: array2[indexPath.row])
             cell.headerTitle.FontStyle(fontSize: 26, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 4, shadowY: 4, fontFamily: "QuickSand")
-            //cell.countryImage.dropShadow(shadowColor: .black, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
-            //cell.countryImage.dropShadow(shadowColor: .white, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
-            //cell.countryImage.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
             cell.infoLabel.FontStyle(fontSize: 14, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 4, shadowY: 4, fontFamily: "QuickSand-light")
 
             cell.layer.masksToBounds = true
@@ -64,18 +44,6 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
             cell.layer.borderColor = UIColor.lightGray.cgColor
             return cell
         }
-//        else {
-//        let recommendedCell = recommendedCollectionView.dequeueReusableCell(withReuseIdentifier: "recommendedCell", for: indexPath) as! recommendedCollectionViewCell
-//            recommendedCell.recImage.image = UIImage(named: "tbtbtb")!
-//            recommendedCell.recName.text = "tbilisi"
-//            recommendedCell.layer.masksToBounds = true
-//            recommendedCell.layer.cornerRadius = 9
-//            recommendedCell.alpha = 0.5
-//            recommendedCell.recImage.dropShadow(shadowColor: .black, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
-//            recommendedCell.recImage.dropShadow(shadowColor: .white, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
-//            recommendedCell.dropShadow(shadowColor: .black, shadowX: 2, shadowY: 2, shadowOpacity: 0.25, shadowRadius: 10)
-//            return recommendedCell
-//        }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
     }

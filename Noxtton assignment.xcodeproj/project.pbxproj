@@ -29,7 +29,6 @@
 		587866382794357B00CB274E /* VaccinesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587866372794357B00CB274E /* VaccinesCollectionViewCell.swift */; };
 		5878663C2795FE2100CB274E /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5878663B2795FE2100CB274E /* HomePageViewController.swift */; };
 		5878663E2795FE2A00CB274E /* HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5878663D2795FE2A00CB274E /* HomePage.storyboard */; };
-		587866412796EDF500CB274E /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 587866402796EDF500CB274E /* Hero */; };
 		588DF68F27A082D500D052B8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 588DF68E27A082D500D052B8 /* Profile.storyboard */; };
 		588DF69127A082E900D052B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588DF69027A082E900D052B8 /* ProfileViewController.swift */; };
 		588DF69527A35BD900D052B8 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 588DF69427A35BD900D052B8 /* SideMenu */; };
@@ -82,7 +81,6 @@
 			files = (
 				5852347227AB59180058DADA /* Shuffle in Frameworks */,
 				588DF69527A35BD900D052B8 /* SideMenu in Frameworks */,
-				587866412796EDF500CB274E /* Hero in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +269,6 @@
 			);
 			name = "Noxtton assignment";
 			packageProductDependencies = (
-				587866402796EDF500CB274E /* Hero */,
 				588DF69427A35BD900D052B8 /* SideMenu */,
 				5852347127AB59180058DADA /* Shuffle */,
 			);
@@ -304,7 +301,6 @@
 			);
 			mainGroup = 5802F087278F0C5100296D2A;
 			packageReferences = (
-				5878663F2796EDF500CB274E /* XCRemoteSwiftPackageReference "Hero" */,
 				588DF69327A35BD900D052B8 /* XCRemoteSwiftPackageReference "SideMenu" */,
 				5852347027AB59180058DADA /* XCRemoteSwiftPackageReference "Shuffle" */,
 			);
@@ -598,14 +594,6 @@
 				minimumVersion = 0.5.0;
 			};
 		};
-		5878663F2796EDF500CB274E /* XCRemoteSwiftPackageReference "Hero" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/HeroTransitions/Hero";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		588DF69327A35BD900D052B8 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
@@ -621,11 +609,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5852347027AB59180058DADA /* XCRemoteSwiftPackageReference "Shuffle" */;
 			productName = Shuffle;
-		};
-		587866402796EDF500CB274E /* Hero */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5878663F2796EDF500CB274E /* XCRemoteSwiftPackageReference "Hero" */;
-			productName = Hero;
 		};
 		588DF69427A35BD900D052B8 /* SideMenu */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Hero
+
 
 class ViewController: UIViewController {
     // Main label below
@@ -21,8 +21,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var forgetPasswordButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hero.isEnabled = true
-        self.view.hero.id = "firstView"
         loginDesign()
     }
 

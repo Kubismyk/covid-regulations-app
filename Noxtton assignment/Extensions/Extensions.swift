@@ -9,6 +9,7 @@ import UIKit
 
 extension Notification.Name {
     static let AddToSaves = Notification.Name("add_to_saves")
+    static let AddToSavesFromShuffle = Notification.Name("add_to_saves_from_shuffles")
 }
 
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19115.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -54,17 +54,17 @@
                                 <rect key="frame" x="20" y="158" width="374" height="638"/>
                                 <color key="backgroundColor" white="0.86328125" alpha="0.12303394039735099" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pjU-MT-H9q">
-                                    <size key="itemSize" width="369" height="125"/>
+                                    <size key="itemSize" width="351" height="125"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MySubscribitionsCollectionViewCell" reuseIdentifier="cell" id="6Tb-Ez-llY" customClass="MySubscribitionsCollectionViewCell" customModule="Noxtton_assignment" customModuleProvider="target">
-                                        <rect key="frame" x="2.5" y="0.0" width="369" height="125"/>
+                                        <rect key="frame" x="11.5" y="0.0" width="351" height="125"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="16O-xF-EFJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="369" height="125"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="351" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xdH-YX-rIJ">
@@ -74,9 +74,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVa-4n-Bqy">
-                                                    <rect key="frame" x="156" y="0.0" width="213" height="125"/>
+                                                    <rect key="frame" x="156" y="0.0" width="195" height="125"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="213" id="P49-P3-S3u"/>
+                                                        <constraint firstAttribute="width" constant="205" id="P49-P3-S3u"/>
                                                         <constraint firstAttribute="height" constant="151" id="mXv-nm-HSv"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -84,7 +84,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="learn more" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3u0-xL-RTS">
-                                                    <rect key="frame" x="282" y="94" width="82" height="21"/>
+                                                    <rect key="frame" x="264" y="94" width="82" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.9084289965986394" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -104,7 +104,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="3u0-xL-RTS" secondAttribute="bottom" constant="10" id="oXt-RC-Ra3"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="369" height="125"/>
+                                        <size key="customSize" width="351" height="125"/>
                                         <connections>
                                             <outlet property="cityImage" destination="xdH-YX-rIJ" id="MbG-L2-nuD"/>
                                             <outlet property="cityNCountryName" destination="RVa-4n-Bqy" id="4jx-Za-yWt"/>
