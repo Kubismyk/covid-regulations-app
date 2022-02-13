@@ -10,5 +10,5 @@ import UIKit
 class VaccinesCollectionViewCell: UICollectionViewCell {
     
     
-    @IBOutlet weak var vaccineButton: UIButton!
+    @IBOutlet weak var vaccineLabel: UILabel!
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 
 class ViewController: UIViewController {
@@ -19,27 +20,36 @@ class ViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var beGuestButton: UIButton!
     @IBOutlet weak var forgetPasswordButton: UIButton!
+    
+    @IBOutlet weak var errorLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         loginDesign()
     }
 
     @IBAction func loginButton(_ sender: Any) {
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "HomePage", bundle:nil)
-//
-//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomePageID") as! HomePageViewController
-//        self.present(nextViewController, animated:true, completion:nil)
+        let email = usernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        //login user
+        Auth.auth().signIn(withEmail: email, password: password) { (result, err) in
+            if err != nil {
+                self.errorLabel.text = "Email or Password is incorrect."
+                self.errorLabel.alpha = 1
+            } else {
+                self.transitionToHome()
+            }
+        }
+    }
+    func transitionToHome(){
+        let storyBoard = UIStoryboard(name: "HomePage", bundle: nil)
+        let tabViewController =
+        storyBoard.instantiateViewController(withIdentifier: "TabBarController") as? TabBarController
+        view.window?.rootViewController = tabViewController
+        view.window?.makeKeyAndVisible()
     }
     
     @IBAction func goToRegisterButton(_ sender: Any) {
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "RegisterStoryboard", bundle:nil)
-//
-//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "RegisterStoryboard") as! RegisterViewcontroller
-//        self.present(nextViewController, animated:true, completion:nil)
         
-//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterVC") as! RegisterViewcontroller
-//        self.navigationController?.pushViewController(vc, animated: true)
-//        self.present(vc, animated: true, completion: nil)
     }
     
     
@@ -74,7 +84,8 @@ class ViewController: UIViewController {
         forgetPasswordButton.buttonStyle(buttonPositionX: 0, buttonPositionY: 0, buttonWidth: 98, buttonHeight: 24, buttonTilte: "forget password?", backgroundColor: .white, titleColor: .gray)
         forgetPasswordButton.buttonFontAndSize(fontFamily: "QuickSand-light", fontSize: 13)
         
-        
+        errorLabel.dropShadow(shadowColor: .red, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
+        errorLabel.font = UIFont(name: "QuickSand-light", size: 20)
     }
     
 }

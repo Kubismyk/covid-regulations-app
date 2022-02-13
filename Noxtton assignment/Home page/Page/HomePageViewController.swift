@@ -85,6 +85,10 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
         chooseDestinationButton.buttonShadow(shadowColor: .black, shadowX: 0, shadowY: 4, shadowOpacity: 0.25, shadowRadius: 10, cornerRadius: 9)
         //chooseDestinationButton.buttonFontAndSize(fontFamily: "QuickSand", fontSize: 18)
         chooseDestinationButton.titleLabel?.font = UIFont(name: "QuickSand-semibold", size: 20)
+        
+        profileImageView.dropShadow(shadowColor: .black, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
+        profileImageView.layer.borderWidth = 2
+        profileImageView.layer.borderColor = UIColor(named: "MainBlue")?.cgColor
     }
     
     
@@ -171,12 +175,12 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
             img_card_type.topAnchor.constraint(equalTo: view_bg1.topAnchor, constant: 0).isActive = true
             img_card_type.widthAnchor.constraint(equalToConstant: 100).isActive = true
             
-            view_bg.centerXAnchor.constraint(equalToSystemSpacingAfter: destinationBox.centerXAnchor, multiplier: 1).isActive = true
-            view_bg.centerYAnchor.constraint(equalToSystemSpacingBelow: destinationBox.centerYAnchor, multiplier: 1).isActive = true
+            //view_bg.centerXAnchor.constraint(equalToSystemSpacingAfter: destinationBox.centerXAnchor, multiplier: 1).isActive = true
+            //view_bg.centerYAnchor.constraint(equalToSystemSpacingBelow: destinationBox.centerYAnchor, multiplier: 1).isActive = true
             view_bg.rightAnchor.constraint(equalTo: destinationBox.rightAnchor, constant: 1).isActive = true
             view_bg.leftAnchor.constraint(equalTo: destinationBox.leftAnchor, constant: 1).isActive = true
             view_bg.bottomAnchor.constraint(equalTo: destinationBox.bottomAnchor, constant: 1).isActive = true
-            
+            view_bg.topAnchor.constraint(equalTo: destinationBox.topAnchor, constant: 1).isActive = true
             
             let img_comapny = UIImageView(frame: CGRect(x: 0, y: 0, width: view_bg.frame.size.width, height: 100))
             img_comapny.image = index.image

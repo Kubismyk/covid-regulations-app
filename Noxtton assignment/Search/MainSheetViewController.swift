@@ -34,6 +34,8 @@ class MainSheetViewController: UIViewController {
         countryTitle.FontStyle(fontSize: 30, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 0, shadowY: 0, fontFamily: "QuickSand-semibold")
         mainButton.buttonShadow(shadowColor: .black, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10, cornerRadius: 15)
         mainButton.buttonFontAndSize(fontFamily: "QuickSand-semibold", fontSize: 17)
+        
+        countryImage.dropShadow(shadowColor: .black, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
     }
 
 

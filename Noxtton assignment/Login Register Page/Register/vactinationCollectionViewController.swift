@@ -7,9 +7,14 @@
 
 import UIKit
 
-class vactinationCollectionViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+protocol vaccineDataSentToRegisterViewControllerProtocol {
+    func sendDataToFirstViewController(myData: String)
+}
+
+class vactinationCollectionViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate {
     
     var vaccinesData:[String] = ["Moderna","Pfyzer","lorem","space","ipsum","Sinovac","asdasdasdas dasdasdasd sadasd","Sinofarm","J&J"]
+    var delegate: vaccineDataSentToRegisterViewControllerProtocol? = nil
     
     @IBOutlet weak var mainText: UILabel!
     
@@ -23,6 +28,7 @@ class vactinationCollectionViewController: UIViewController, UICollectionViewDat
         
         vaccinesCollectionView.dataSource = self
         vaccinesCollectionView.delegate = self
+        
     }
     
     // design below
@@ -41,8 +47,9 @@ class vactinationCollectionViewController: UIViewController, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let vaccineCell = collectionView.dequeueReusableCell(withReuseIdentifier: "vaccine", for: indexPath) as! VaccinesCollectionViewCell
 
+        vaccineCell.isUserInteractionEnabled = true
         vaccineCell.layer.cornerRadius = 7
-        vaccineCell.vaccineButton.setTitle(vaccinesData[indexPath.row], for: .normal) // vaccine names from API
+        vaccineCell.vaccineLabel.text = vaccinesData[indexPath.row] // vaccine names from API
         return vaccineCell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -59,8 +66,24 @@ class vactinationCollectionViewController: UIViewController, UICollectionViewDat
 
         return CGSize(width: size, height: size)
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedVaccine = vaccinesData[indexPath.row]
+        
+        
+        if self.delegate != nil {
+            self.delegate?.sendDataToFirstViewController(myData: selectedVaccine)
+            dismiss(animated: true, completion: nil)
+        }
+    }
     @IBAction func notVaccinated(_ sender: Any) {
         // denying vactination action here
-        print("denying vactination action here")
+        if self.delegate != nil {
+            self.delegate?.sendDataToFirstViewController(myData: "no")
+            dismiss(animated: true, completion: nil)
+        }
     }
-}
+    
+
+    }
+

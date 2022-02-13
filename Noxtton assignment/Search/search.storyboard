@@ -173,13 +173,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2n1-fN-qc2">
-                                <rect key="frame" x="20" y="258.5" width="374" height="31.5"/>
+                                <rect key="frame" x="20" y="275.5" width="374" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tbtbtb" translatesAutoresizingMaskIntoConstraints="NO" id="i2W-O4-S4F">
-                                <rect key="frame" x="0.0" y="44" width="414" height="168"/>
+                                <rect key="frame" x="0.0" y="61" width="414" height="168"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfM-LM-4XY">
                                 <rect key="frame" x="20" y="783" width="374" height="45"/>
@@ -246,11 +246,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1fM-el-FFC" firstAttribute="bottom" secondItem="rfM-LM-4XY" secondAttribute="bottom" constant="34" id="3BT-6h-jQV"/>
+                            <constraint firstItem="i2W-O4-S4F" firstAttribute="top" secondItem="1fM-el-FFC" secondAttribute="top" constant="17" id="8s9-DB-ppF"/>
                             <constraint firstItem="rfM-LM-4XY" firstAttribute="leading" secondItem="1fM-el-FFC" secondAttribute="leading" constant="20" id="daY-Re-QIA"/>
                             <constraint firstItem="1fM-el-FFC" firstAttribute="trailing" secondItem="rfM-LM-4XY" secondAttribute="trailing" constant="20" id="doK-cA-jXM"/>
                             <constraint firstItem="2n1-fN-qc2" firstAttribute="top" secondItem="i2W-O4-S4F" secondAttribute="bottom" constant="46.5" id="fTH-Ob-DA0"/>
                             <constraint firstItem="rfM-LM-4XY" firstAttribute="trailing" secondItem="2n1-fN-qc2" secondAttribute="trailing" id="isW-27-6YV"/>
-                            <constraint firstItem="i2W-O4-S4F" firstAttribute="top" secondItem="1fM-el-FFC" secondAttribute="top" id="l8y-ey-ja9"/>
                             <constraint firstItem="i2W-O4-S4F" firstAttribute="leading" secondItem="1fM-el-FFC" secondAttribute="leading" id="q4C-q1-lQN"/>
                             <constraint firstItem="1fM-el-FFC" firstAttribute="trailing" secondItem="i2W-O4-S4F" secondAttribute="trailing" id="yGI-Cz-LfZ"/>
                             <constraint firstItem="rfM-LM-4XY" firstAttribute="leading" secondItem="2n1-fN-qc2" secondAttribute="leading" id="zvl-uN-6hw"/>

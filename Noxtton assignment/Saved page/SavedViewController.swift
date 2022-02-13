@@ -61,22 +61,38 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
         let countryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MySubscribitionsCollectionViewCell
         countryCell.configure(with: savedArray[indexPath.row])
         
-        countryCell.layer.cornerRadius = 10
-        countryCell.layer.borderWidth = 1.0
-        countryCell.layer.borderColor = UIColor.lightGray.cgColor
-        countryCell.layer.backgroundColor = UIColor.white.cgColor
-        countryCell.layer.shadowColor = UIColor.gray.cgColor
-        countryCell.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
-        countryCell.layer.shadowRadius = 10.0
-        countryCell.layer.shadowOpacity = 0.5
+//        let shadowView = UIView()
+//        shadowView.layer.masksToBounds = false
+////        countryCell.layer.cornerRadius = 10
+////        countryCell.layer.borderWidth = 1.0
+//        shadowView.layer.borderColor = UIColor.lightGray.cgColor
+//        shadowView.layer.backgroundColor = UIColor.white.cgColor
+//        shadowView.layer.shadowColor = UIColor.black.cgColor
+//        shadowView.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
+//        shadowView.layer.shadowRadius = 10.0
+//        shadowView.layer.shadowOpacity = 0.25
+//
+//        let mainView = UIView()
+//        mainView.layer.cornerRadius = 10
+//        mainView.layer.masksToBounds = true
+//
+//        shadowView.addSubview(mainView)
+        let shadowView = UIView()
+        shadowView.dropShadow(shadowColor: .black, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
+        
+        shadowView.addSubview(countryCell)
+        
+        
+        countryCell.shadowDecorate()
         countryCell.cityImage.clipsToBounds = true
+        //countryCell.cityImage.dropShadow(shadowColor: .black, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
         countryCell.cityImage.layer.cornerRadius = 10
         countryCell.cityImage.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         countryCell.cityNCountryName.FontStyle(fontSize: 25, shadowRadius: 5, shadowOpacity: 0.25, shadowX: 2, shadowY: 0, fontFamily: "QuickSand-bold")
         countryCell.learnMore.FontStyle(fontSize: 20, shadowRadius: 5, shadowOpacity: 0.25, shadowX: 2, shadowY: 0, fontFamily: "QuickSand-semibold")
-        countryCell.layer.cornerRadius = 10
-        countryCell.layer.borderWidth = 1.0
-        countryCell.layer.borderColor = UIColor.clear.cgColor
+//        countryCell.layer.cornerRadius = 10
+//        countryCell.layer.borderWidth = 1.0
+//        countryCell.layer.borderColor = UIColor.clear.cgColor
         //countryCell.layer.masksToBounds = true
 
 
@@ -97,4 +113,22 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        return CGSize(width: collectionView.frame.size.width - 300, height: collectionView.frame.size.height/2)
 //    }
+}
+
+extension UICollectionViewCell {
+    func shadowDecorate() {
+        let radius: CGFloat = 10
+        contentView.layer.cornerRadius = radius
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor.clear.cgColor
+        contentView.layer.masksToBounds = true
+    
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        layer.shadowRadius = 2.0
+        layer.shadowOpacity = 0.5
+        layer.masksToBounds = false
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: radius).cgPath
+        layer.cornerRadius = radius
+    }
 }
