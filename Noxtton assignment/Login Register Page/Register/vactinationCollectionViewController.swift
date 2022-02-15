@@ -69,7 +69,7 @@ class vactinationCollectionViewController: UIViewController, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let selectedVaccine = vaccinesData[indexPath.row]
-        
+        Vibration.soft.vibrate()
         
         if self.delegate != nil {
             self.delegate?.sendDataToFirstViewController(myData: selectedVaccine)
@@ -78,6 +78,8 @@ class vactinationCollectionViewController: UIViewController, UICollectionViewDat
     }
     @IBAction func notVaccinated(_ sender: Any) {
         // denying vactination action here
+        Vibration.soft.vibrate()
+        
         if self.delegate != nil {
             self.delegate?.sendDataToFirstViewController(myData: "no")
             dismiss(animated: true, completion: nil)

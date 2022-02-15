@@ -99,6 +99,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="usernameTextFieldTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="m5y-J7-bWt"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kxv-aK-7uc">
                                 <rect key="frame" x="65" y="472" width="284" height="50"/>
@@ -107,6 +110,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="usernameTextFieldTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="vf3-C0-CW4"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUd-Oq-6ul">
                                 <rect key="frame" x="20" y="692" width="374" height="40.5"/>

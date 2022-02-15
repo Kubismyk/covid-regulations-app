@@ -25,9 +25,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginDesign()
+        self.hideKeyboardWhenTappedAround()
     }
 
-    @IBAction func loginButton(_ sender: Any) {
+    @IBAction func loginButton(_ sender: UIButton) {
+        sender.keyboardAnimationView()
         let email = usernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         //login user
@@ -86,6 +88,10 @@ class ViewController: UIViewController {
         
         errorLabel.dropShadow(shadowColor: .red, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
         errorLabel.font = UIFont(name: "QuickSand-light", size: 20)
+    }
+
+    @IBAction func usernameTextFieldTapped(_ sender: UITextField) {
+        sender.keyboardAnimation()
     }
     
 }

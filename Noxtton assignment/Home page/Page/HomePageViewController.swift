@@ -7,11 +7,13 @@
 
 import UIKit
 import Shuffle
+import FirebaseFirestore
+import Firebase
 
-//struct SearchCollectionViewData {
-//    var mainImage: UIImage
-//    var countryName: String
-//}
+struct usefulValuesFetchedFromFirebase {
+    static var username:String = "Welcome"
+    static var vaccine:String = "No info"
+}
 
 class HomePageViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,SwipeCardStackDataSource,SwipeCardStackDelegate  {
     
@@ -25,6 +27,8 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
     }
     
     let cardStack = SwipeCardStack()
+    
+    let db = Firestore.firestore()
     
     
     var array3:[SearchCollectionViewData] = [
@@ -91,11 +95,37 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
         profileImageView.layer.borderColor = UIColor(named: "MainBlue")?.cgColor
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        readData()
+        
+        print(usefulValuesFetchedFromFirebase.username)
+    }
+    
+    func readData(){
+        self.db.collection("users").getDocuments{ (snapshot, err) in
+            
+            if let err = err {
+                print("error happened \(err)")
+            }else {
+                if let userId = Auth.auth().currentUser?.uid {
+                if let currentUserDoc = snapshot?.documents.first(where: { ($0["uid"] as? String) == userId }) {
+                    var welcomeName = currentUserDoc["username"] as! String
+                    var vaccine = currentUserDoc["vaccine"] as! String
+                    usefulValuesFetchedFromFirebase.username = welcomeName
+                    usefulValuesFetchedFromFirebase.vaccine = vaccine
+                    self.welcomeNameLabel.text = "Welcome, \(welcomeName)"
+                    }
+                }
+            }
+        }
+    }
     
     
     
     @IBAction func chooseDestinationButtonClick(_ sender: UIButton) {
         self.tabBarController!.selectedIndex = 3 - 1
+        Vibration.soft.vibrate()
     }
     
     

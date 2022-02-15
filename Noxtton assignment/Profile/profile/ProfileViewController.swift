@@ -30,8 +30,12 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         profileDesign()
-        
-        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.usernameText.text = usefulValuesFetchedFromFirebase.username
+        self.usernameLabel.text = usefulValuesFetchedFromFirebase.username
     }
     
 

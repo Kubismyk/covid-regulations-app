@@ -37,6 +37,7 @@ class RegisterViewController: UIViewController,vaccineDataSentToRegisterViewCont
         super.viewDidLoad()
 
         registerDesign()
+        self.hideKeyboardWhenTappedAround()
         
     }
 
@@ -144,8 +145,9 @@ class RegisterViewController: UIViewController,vaccineDataSentToRegisterViewCont
         return nil
 }
     
-    @IBAction func logInButton(_ sender: Any) {
+    @IBAction func logInButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+        sender.keyboardAnimationView()
     }
     
     func transitionToHome(){
@@ -198,5 +200,8 @@ class RegisterViewController: UIViewController,vaccineDataSentToRegisterViewCont
     
         
 }
-
+    @IBAction func usernameTextFieldTapped(_ sender: UITextField) {
+        sender.keyboardAnimation()
+    }
+    
 }

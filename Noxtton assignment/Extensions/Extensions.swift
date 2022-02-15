@@ -16,6 +16,21 @@ extension Notification.Name {
 // UI VIEW
 
 extension UIView {
+    func shake() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        animation.duration = 0.45
+        animation.values = [-3.0, 3.0, -3.0, 7.0, -1.0, 1.0, -1.0, 1.0, 0.0 ]
+        layer.add(animation, forKey: "shake")
+    }
+    func keyboardAnimationView(){
+        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            //self.layer.shadowOpacity = 6
+            self.bounds.size.width += 15
+            self.bounds.size.height += 20
+            self.shake()
+        }, completion: nil)
+    }
 
     func addInnerShadoToVieww(innerShadowColor:UIColor,innerShadowX:Int,innerShadowY:Int,innerShadowOpacity:Float,innerShadowRadius:CGFloat) {
             // Inner shadow things...
@@ -184,6 +199,15 @@ public extension UITextField {
         self.textColor = TextColor
         
     }
+    
+    func keyboardAnimation(){
+        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            self.layer.shadowOpacity = 6
+            self.bounds.size.width += 15
+            self.bounds.size.height += 20
+            self.shake()
+        }, completion: nil)
+    }
 
     enum Direction {
         case Left
@@ -221,9 +245,76 @@ public extension UITextField {
     }
 }
 
+
+// check if mail is valid
 extension String {
     func isValidEmail() -> Bool {
         let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
         return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
     }
 }
+
+// vibrations source code
+
+//usage Vibration.successs.vibrate()
+
+enum Vibration {
+      case error
+      case success
+      case warning
+      case light
+      case medium
+      case heavy
+      @available(iOS 13.0, *)
+      case soft
+      @available(iOS 13.0, *)
+      case rigid
+      case selection
+      //case oldSchool
+
+      public func vibrate() {
+          switch self {
+          case .error:
+              UINotificationFeedbackGenerator().notificationOccurred(.error)
+          case .success:
+              UINotificationFeedbackGenerator().notificationOccurred(.success)
+          case .warning:
+              UINotificationFeedbackGenerator().notificationOccurred(.warning)
+          case .light:
+              UIImpactFeedbackGenerator(style: .light).impactOccurred()
+          case .medium:
+              UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+          case .heavy:
+              UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+          case .soft:
+              if #available(iOS 13.0, *) {
+                  UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+              }
+          case .rigid:
+              if #available(iOS 13.0, *) {
+                  UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
+              }
+          case .selection:
+              UISelectionFeedbackGenerator().selectionChanged()
+//          case .oldSchool:
+//              AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+          }
+      }
+  }
+
+// dismiss textfield keyboard on view click
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+
+
