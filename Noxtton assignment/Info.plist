@@ -8,6 +8,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Oswald-VariableFont_wght.ttf</string>
 		<string>QuickSand.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>

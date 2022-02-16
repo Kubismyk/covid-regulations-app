@@ -32,6 +32,72 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
 
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        getAPI()
+    }
+    private func getAPI (){
+        
+        DispatchQueue.main.async {
+                    APIServicies.getVaccines(completion: { [weak self] result in
+                        switch result {
+                        case .success(let vaccines):
+                            print(vaccines.data)
+                            
+                        case .failure(let error):
+                            print(error)
+                        }
+                        
+                    })
+                }
+                
+                DispatchQueue.main.async {
+                    APIServicies.getNations(completion: { result in
+                        switch result {
+                        case .success(let nations):
+                            print(nations.data)
+                        case .failure(let error):
+                            print(error)
+                        }
+                        
+                    })
+                }
+                
+                DispatchQueue.main.async {
+                    APIServicies.getAirports(completion: { result in
+                        switch result {
+                        case .success(let airports):
+                            print(airports.data)
+                        case .failure(let error):
+                            print(error)
+                        }
+                        
+                    })
+                }
+        DispatchQueue.main.async {
+                    APIServicies.getRestrictionsInfo(from: "german",
+                                                     countryCode: "BER",
+                                                     to: "RIX",
+                                                     with: "sinovac", completion: {result in
+                        switch result {
+                        case .success(let restrictions):
+                            print(restrictions)
+                        case .failure(let error):
+                            print(error)
+                        }
+                        
+                    })
+
+                }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "searchCell", for: indexPath) as! searchCollectionViewCell
             cell.config(data: array2[indexPath.row])
