@@ -25,7 +25,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginDesign()
+<<<<<<< HEAD
         self.hideKeyboardWhenTappedAround()
+=======
+        getAPI()
+>>>>>>> 185dd59949cdf03b065f417405265e6573264f17
     }
 
     @IBAction func loginButton(_ sender: UIButton) {
@@ -55,7 +59,60 @@ class ViewController: UIViewController {
     }
     
     
-    
+    private func getAPI (){
+        
+        DispatchQueue.main.async {
+                    APIServicies.getVaccines(completion: { [weak self] result in
+                        switch result {
+                        case .success(let vaccines):
+                            print(vaccines.data)
+                            
+                        case .failure(let error):
+                            print(error)
+                        }
+                        
+                    })
+                }
+                
+                DispatchQueue.main.async {
+                    APIServicies.getNations(completion: { result in
+                        switch result {
+                        case .success(let nations):
+                            print(nations.data)
+                        case .failure(let error):
+                            print(error)
+                        }
+                        
+                    })
+                }
+                
+                DispatchQueue.main.async {
+                    APIServicies.getAirports(completion: { result in
+                        switch result {
+                        case .success(let airports):
+                            print(airports.data)
+                        case .failure(let error):
+                            print(error)
+                        }
+                        
+                    })
+                }
+        DispatchQueue.main.async {
+                    APIServicies.getRestrictionsInfo(from: "german",
+                                                     countryCode: "BER",
+                                                     to: "RIX",
+                                                     with: "sinovac", completion: {result in
+                        switch result {
+                        case .success(let restrictions):
+                            print(restrictions)
+                        case .failure(let error):
+                            print(error)
+                        }
+                        
+                    })
+
+                }
+    }
     
     
     func loginDesign(){
