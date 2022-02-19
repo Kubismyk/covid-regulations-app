@@ -106,7 +106,7 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
             sheet.prefersScrollingExpandsWhenScrolledToEdge = true
             sheet.prefersGrabberVisible = true
         }
-        backDropActionSheet.configure(with: savedArray[indexPath.row])
+        //backDropActionSheet.configure(with: savedArray[indexPath.row])
         
         self.present(backDropActionSheet,animated: true,completion: nil)
     }

@@ -111,6 +111,8 @@ class APIServicies {
         var type: String
         var generalRestricitons: GeneralRestricitons?
         var byVaccination: RestrictionsByVaccination?
+        var byNationality: RestrictionsByNationalityData?
+        //var byNationality:
 
         
         init(with data: [String: Any]) {
@@ -121,6 +123,10 @@ class APIServicies {
             
             if let vaccine = data["restrictionsByVaccination"] as? [String: Any] {
                 byVaccination = RestrictionsByVaccination(with: vaccine)
+            }
+            if let nationality = data["restrictionsByNationality"] as? [[String: Any]]{
+                //nationality = RestrictionsByNationalityData(
+                byNationality = RestrictionsByNationalityData(with: nationality)
             }
         }
 
@@ -158,4 +164,94 @@ class APIServicies {
             
         }
     }
+    struct RestrictionsByNationalityData {
+            var allowsTourists: Bool?
+            var allowsBusinessVisit: Bool?
+            var pcrRequired: Bool?
+            var fastTestRequired: Bool?
+            var biometricPassportRequired: Bool?
+            var locatorFormRequired: Bool?
+            var covidPassportRequired: Bool?
+            
+            enum types: String {
+                case visit = "Visit Type"
+                case covidTest = "Covid Test"
+                case documentsRequired = "Documents Required"
+            }
+            
+            init(with datas: [[String: Any]]) {
+                for data in datas {
+                    guard let restrictionType = data["type"]  as? String,
+                          let restrictionData = data["data"] as? [String: Bool] else { return }
+                   
+                    if restrictionType == types.visit.rawValue {
+                        allowsTourists = restrictionData["allowsTourists"] ?? false
+                        allowsBusinessVisit = restrictionData["allowsBusinessVisit"] ?? false
+                    } else if restrictionType == types.covidTest.rawValue {
+                        pcrRequired = restrictionData["pcrRequired"] ?? false
+                        fastTestRequired = restrictionData["fastTestRequired"] ?? false
+                    } else if restrictionType == types.documentsRequired.rawValue {
+                        biometricPassportRequired = restrictionData["biometricPassportRequired"] ?? false
+                        locatorFormRequired = restrictionData["locatorFormRequired"] ?? false
+                        covidPassportRequired = restrictionData["covidPassportRequired"] ?? false
+                    }
+                }
+            }
+        }
+
 }
+
+
+
+//        DispatchQueue.main.async {
+//                    APIServicies.getVaccines(completion: { [weak self] result in
+//                        switch result {
+//                        case .success(let vaccines):
+//                            print(vaccines.data)
+//
+//                        case .failure(let error):
+//                            print(error)
+//                        }
+//
+//                    })
+//                }
+//
+//                DispatchQueue.main.async {
+//                    APIServicies.getNations(completion: { result in
+//                        switch result {
+//                        case .success(let nations):
+//                            print("o")
+//                        case .failure(let error):
+//                            print(error)
+//                        }
+//
+//                    })
+//                }
+//
+//                DispatchQueue.main.async {
+//                    APIServicies.getAirports(completion: { result in
+//                        switch result {
+//                        case .success(let airports):
+//                            self.airportsInformation.append(contentsOf: airports.data)
+//                        case .failure(let error):
+//                            print(error)
+//                        }
+//
+//                    })
+//                }
+//        DispatchQueue.main.async {
+//            APIServicies.getRestrictionsInfo(from: usefulValuesFetchedFromFirebase.nationality,
+//                                                     countryCode: "BER",
+//                                                     to: "RIX",
+//                                                     with: usefulValuesFetchedFromFirebase.vaccine, completion: {result in
+//                        switch result {
+//                        case .success(let restrictions):
+//                            //print(restrictions)
+//                            print("o")
+//                        case .failure(let error):
+//                            print(error)
+//                        }
+//
+//                    })
+//
+//                }

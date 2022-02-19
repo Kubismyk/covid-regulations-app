@@ -107,8 +107,8 @@
             filePath = "Noxtton assignment/Search/MainSheetViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "MainSheetViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -123,9 +123,9 @@
             filePath = "Noxtton assignment/Search/searchCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "config(data:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "config(data:dataTwo:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -232,8 +232,8 @@
             filePath = "Noxtton assignment/Search/searchCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "searchCollectionViewCell"
             landmarkType = "3">
          </BreakpointContent>
@@ -248,8 +248,8 @@
             filePath = "Noxtton assignment/Search/searchCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "likeButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -328,8 +328,8 @@
             filePath = "Noxtton assignment/Login Register Page/Register/RegisterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "RegisterViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -360,8 +360,8 @@
             filePath = "Noxtton assignment/Login Register Page/Register/RegisterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "transitionToHome()"
             landmarkType = "7">
          </BreakpointContent>
@@ -376,10 +376,26 @@
             filePath = "Noxtton assignment/Home page/Page/HomePageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "readData()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "197CEB73-4BDA-4483-9329-A0531667348E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Noxtton assignment/Login Register Page/Register/RegisterViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "RegisterViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

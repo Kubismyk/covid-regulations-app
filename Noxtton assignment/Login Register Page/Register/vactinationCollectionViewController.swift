@@ -13,8 +13,27 @@ protocol vaccineDataSentToRegisterViewControllerProtocol {
 
 class vactinationCollectionViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate {
     
-    var vaccinesData:[String] = ["Moderna","Pfyzer","lorem","space","ipsum","Sinovac","asdasdasdas dasdasdasd sadasd","Sinofarm","J&J"]
+    static var vaccinesData:[String] = ["loading"]
+    
+//    private func getVaccinesAPI (){
+//
+//        DispatchQueue.main.async {
+//                    APIServicies.getVaccines(completion: { [weak self] result in
+//                        switch result {
+//                        case .success(let vaccines):
+//                            print(vaccines.data)
+//                            self?.vaccinesData = vaccines.data
+//
+//                        case .failure(let error):
+//                            print(error)
+//                        }
+//
+//                    })
+//                }
+//    }
+    
     var delegate: vaccineDataSentToRegisterViewControllerProtocol? = nil
+    
     
     @IBOutlet weak var mainText: UILabel!
     
@@ -25,10 +44,19 @@ class vactinationCollectionViewController: UIViewController, UICollectionViewDat
         super.viewDidLoad()
 
         mainDesign()
-        
         vaccinesCollectionView.dataSource = self
         vaccinesCollectionView.delegate = self
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        //getVaccinesAPI()
         
+        vaccinesCollectionView.reloadData()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        vaccinesCollectionView.reloadData()
     }
     
     // design below
@@ -42,14 +70,14 @@ class vactinationCollectionViewController: UIViewController, UICollectionViewDat
     // collection view below
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        vaccinesData.count  // number of items in the vaccine API
+        vactinationCollectionViewController.vaccinesData.count  // number of items in the vaccine API
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let vaccineCell = collectionView.dequeueReusableCell(withReuseIdentifier: "vaccine", for: indexPath) as! VaccinesCollectionViewCell
 
         vaccineCell.isUserInteractionEnabled = true
         vaccineCell.layer.cornerRadius = 7
-        vaccineCell.vaccineLabel.text = vaccinesData[indexPath.row] // vaccine names from API
+        vaccineCell.vaccineLabel.text = vactinationCollectionViewController.vaccinesData[indexPath.row] // vaccine names from API
         return vaccineCell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -68,7 +96,7 @@ class vactinationCollectionViewController: UIViewController, UICollectionViewDat
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let selectedVaccine = vaccinesData[indexPath.row]
+        let selectedVaccine = vactinationCollectionViewController.vaccinesData[indexPath.row]
         Vibration.soft.vibrate()
         
         if self.delegate != nil {

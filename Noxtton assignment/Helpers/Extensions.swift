@@ -115,6 +115,18 @@ public extension UILabel {
        self.layer.shadowOffset = CGSize(width: shadowX, height: shadowY)
     }
     
+    func isTrueOrFalse(){
+        if self.text == "true" {
+            self.textColor = .green
+            self.text = "√"
+        } else if self.text == "false" {
+            self.textColor = .red
+            self.text = "x"
+        } else {
+            return
+        }
+    }
+    
     // work in progress gradinet to UILabel
     
 //    func gradientImage(size: CGSize, color1: CIColor, color2: CIColor, direction: GradientDirection = .Up) -> UIImage {
@@ -254,6 +266,15 @@ extension String {
     }
 }
 
+//extension Bool {
+//    func isTrueOrFalse(){
+//        if self == true {
+//            print("Its true")
+//        } else {
+//            print("Its false")
+//        }
+//    }
+//}
 // vibrations source code
 
 //usage Vibration.successs.vibrate()

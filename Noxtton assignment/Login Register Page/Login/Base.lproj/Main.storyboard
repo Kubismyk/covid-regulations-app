@@ -20,7 +20,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eZp-4t-bV1">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="344"/>
-                                <imageReference key="image" image="Group 35"/>
+                                <imageReference key="image" image="LoginTop"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbn-Jq-o3e">
                                 <rect key="frame" x="109.5" y="138" width="195.5" height="82.5"/>
@@ -47,6 +47,9 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="be guest"/>
                                                 <buttonConfiguration key="configuration" style="tinted" title="be guest"/>
+                                                <connections>
+                                                    <segue destination="ZpR-KS-Qqk" kind="presentation" modalPresentationStyle="fullScreen" id="Z09-qw-B4a"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -82,15 +85,6 @@
                                     <action selector="goToRegisterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EiA-f7-2K3"/>
                                     <segue destination="f4y-id-ywh" kind="presentation" modalPresentationStyle="fullScreen" id="AX7-QT-p8l"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3Q-7c-9aB">
-                                <rect key="frame" x="278" y="757" width="136" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="7MN-d0-kKA"/>
-                                </constraints>
-                                <color key="tintColor" name="myGray"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="forget password?"/>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pIv-D0-4kN">
                                 <rect key="frame" x="65" y="384" width="284" height="50"/>
@@ -129,14 +123,12 @@
                         <constraints>
                             <constraint firstItem="eZp-4t-bV1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Rj-Oh-yqO"/>
                             <constraint firstItem="Kxv-aK-7uc" firstAttribute="top" secondItem="pIv-D0-4kN" secondAttribute="bottom" constant="38" id="1YF-Xd-6BE"/>
-                            <constraint firstItem="H3Q-7c-9aB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1gi-Jz-8F9"/>
                             <constraint firstItem="AZC-Zz-Zks" firstAttribute="top" secondItem="IUd-Oq-6ul" secondAttribute="bottom" constant="17.5" id="3dz-qw-LlR"/>
                             <constraint firstItem="Ixp-9T-wWN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="4cX-BZ-5z8"/>
                             <constraint firstItem="pIv-D0-4kN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="5qU-kc-nlG"/>
                             <constraint firstItem="pIv-D0-4kN" firstAttribute="top" secondItem="eZp-4t-bV1" secondAttribute="bottom" constant="40" id="9Yz-sr-vlv"/>
                             <constraint firstItem="xQ0-Z2-AW9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="AXZ-RE-ygQ"/>
                             <constraint firstItem="nbn-Jq-o3e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eej-Uf-3Cf"/>
-                            <constraint firstItem="H3Q-7c-9aB" firstAttribute="top" secondItem="AZC-Zz-Zks" secondAttribute="bottom" constant="6" id="Ehs-bj-szj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wWe-sO-PJQ" secondAttribute="trailing" constant="68" id="Fkp-Eo-E7y"/>
                             <constraint firstItem="xQ0-Z2-AW9" firstAttribute="top" secondItem="AZC-Zz-Zks" secondAttribute="bottom" constant="8" symbolic="YES" id="FvD-PO-NL6"/>
                             <constraint firstItem="Kxv-aK-7uc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="IFG-jo-kdN"/>
@@ -160,7 +152,6 @@
                         <outlet property="LoginLabel" destination="nbn-Jq-o3e" id="VVf-ym-9JN"/>
                         <outlet property="beGuestButton" destination="qKV-Ha-xw8" id="sV5-qU-Fcx"/>
                         <outlet property="errorLabel" destination="IUd-Oq-6ul" id="4gZ-En-6lp"/>
-                        <outlet property="forgetPasswordButton" destination="H3Q-7c-9aB" id="FZ9-6H-rZu"/>
                         <outlet property="passwordTextField" destination="Kxv-aK-7uc" id="bSX-KI-C9m"/>
                         <outlet property="signInButton" destination="5Mk-ok-z0g" id="j2y-dy-kLz"/>
                         <outlet property="usernameTextField" destination="pIv-D0-4kN" id="xoD-22-LjZ"/>
@@ -169,6 +160,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1849.2753623188407" y="66.964285714285708"/>
+        </scene>
+        <!--Guest-->
+        <scene sceneID="AMy-aZ-UqM">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="GuestHomePageViewController" storyboardName="Guest" id="ZpR-KS-Qqk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJu-Xl-ihf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2512" y="-49"/>
         </scene>
         <!--Register-->
         <scene sceneID="1ul-un-SuU">
@@ -208,7 +207,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Group 35" width="375" height="344"/>
+        <image name="LoginTop" width="375" height="344"/>
         <namedColor name="myGray">
             <color red="0.67799997329711914" green="0.67799997329711914" blue="0.67799997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

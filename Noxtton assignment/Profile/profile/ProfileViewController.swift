@@ -25,7 +25,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var usernameText: UILabel!
     @IBOutlet weak var emailText: UILabel!
     @IBOutlet weak var isUserVaccinatedText: UILabel!
-    @IBOutlet weak var whichVaccineText: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,6 +35,8 @@ class ProfileViewController: UIViewController {
         super.viewWillLayoutSubviews()
         self.usernameText.text = usefulValuesFetchedFromFirebase.username
         self.usernameLabel.text = usefulValuesFetchedFromFirebase.username
+        self.emailText.text = usefulValuesFetchedFromFirebase.nationality
+        self.isUserVaccinatedText.text = usefulValuesFetchedFromFirebase.vaccine
     }
     
 
@@ -53,7 +54,6 @@ class ProfileViewController: UIViewController {
         emailText.FontStyle(fontSize: 17, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 2, shadowY: 0, fontFamily: "QuickSand-semibold")
         usernameText.FontStyle(fontSize: 17, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 2, shadowY: 0, fontFamily: "QuickSand-semibold")
         isUserVaccinatedText.FontStyle(fontSize: 17, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 2, shadowY: 0, fontFamily: "QuickSand-semibold")
-        whichVaccineText.FontStyle(fontSize: 17, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 2, shadowY: 0, fontFamily: "QuickSand-semibold")
         myInfoLabel.FontStyle(fontSize: 30, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 2, shadowY: 0, fontFamily: "QuickSand-bold")
     }
     

@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     // Buttons below
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var beGuestButton: UIButton!
-    @IBOutlet weak var forgetPasswordButton: UIButton!
     
     @IBOutlet weak var errorLabel: UILabel!
     override func viewDidLoad() {
@@ -48,6 +47,7 @@ class ViewController: UIViewController {
         storyBoard.instantiateViewController(withIdentifier: "TabBarController") as? TabBarController
         view.window?.rootViewController = tabViewController
         view.window?.makeKeyAndVisible()
+        NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil)
     }
     
     @IBAction func goToRegisterButton(_ sender: Any) {
@@ -80,9 +80,6 @@ class ViewController: UIViewController {
         beGuestButton.buttonShadow(shadowColor: .gray, shadowX: 2, shadowY: 4, shadowOpacity: 0.3, shadowRadius: 4, cornerRadius: 15)
         signInButton.buttonFontAndSize(fontFamily: "QuickSand-semibold", fontSize: 18)
         beGuestButton.buttonFontAndSize(fontFamily: "QuickSand-semibold", fontSize: 18)
-        forgetPasswordButton.buttonStyle(buttonPositionX: 0, buttonPositionY: 0, buttonWidth: 98, buttonHeight: 24, buttonTilte: "forget password?", backgroundColor: .white, titleColor: .gray)
-        forgetPasswordButton.buttonFontAndSize(fontFamily: "QuickSand-light", fontSize: 13)
-        
         errorLabel.dropShadow(shadowColor: .red, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
         errorLabel.font = UIFont(name: "QuickSand-light", size: 20)
     }

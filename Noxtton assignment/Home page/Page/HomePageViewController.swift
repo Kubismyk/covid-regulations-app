@@ -11,8 +11,9 @@ import FirebaseFirestore
 import Firebase
 
 struct usefulValuesFetchedFromFirebase {
-    static var username:String = "Welcome"
+    static var username:String = ""
     static var vaccine:String = "No info"
+    static var nationality:String = "No info"
 }
 
 class HomePageViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,SwipeCardStackDataSource,SwipeCardStackDelegate  {
@@ -62,12 +63,11 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
     @IBOutlet var contentView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.addSubview(cardStack)
         cardStack.dataSource = self
         cardStack.delegate = self
         cardStack.frame = destinationBox.frame
-        
+        self.welcomeNameLabel.text = "Welcome, \(usefulValuesFetchedFromFirebase.username)"
         Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
         
         tagsCollectionView.delegate = self
@@ -93,15 +93,17 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
         profileImageView.dropShadow(shadowColor: .black, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
         profileImageView.layer.borderWidth = 2
         profileImageView.layer.borderColor = UIColor(named: "MainBlue")?.cgColor
-    }
     
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         readData()
-        
-        print(usefulValuesFetchedFromFirebase.username)
     }
-    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+    }
+
+    //NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil)
     func readData(){
         self.db.collection("users").getDocuments{ (snapshot, err) in
             
@@ -112,8 +114,10 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
                 if let currentUserDoc = snapshot?.documents.first(where: { ($0["uid"] as? String) == userId }) {
                     var welcomeName = currentUserDoc["username"] as! String
                     var vaccine = currentUserDoc["vaccine"] as! String
+                    var nationality = currentUserDoc["nationality"] as! String
                     usefulValuesFetchedFromFirebase.username = welcomeName
                     usefulValuesFetchedFromFirebase.vaccine = vaccine
+                    usefulValuesFetchedFromFirebase.nationality = nationality
                     self.welcomeNameLabel.text = "Welcome, \(welcomeName)"
                     }
                 }

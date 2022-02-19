@@ -9,20 +9,31 @@ import UIKit
 import Firebase
 
 
-class RegisterViewController: UIViewController,vaccineDataSentToRegisterViewControllerProtocol {
+class RegisterViewController: UIViewController,vaccineDataSentToRegisterViewControllerProtocol,LocationDataSentToRegisterViewControllerProtocol {
     func sendDataToFirstViewController(myData: String) {
         self.chosenVaccine = myData
+    }
+    func sendLocationDataToFirstViewController(myData: String) {
+        self.chosenLocation = myData
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "getDataSegue" {
             let secondVC: vactinationCollectionViewController = segue.destination as! vactinationCollectionViewController
             secondVC.delegate = self
         }
+        if segue.identifier == "getData2Segue" {
+            let thirdVC:LocationViewController = segue.destination as! LocationViewController
+            thirdVC.delegate = self
+        }
     }
+    
+    
+    
     
     @IBOutlet weak var errorLabel: UILabel!
     
     var chosenVaccine:String = ""
+    var chosenLocation:String = ""
     
     @IBOutlet weak var alreadyRegistered: UILabel!
     @IBOutlet weak var RegisterLabel: UILabel!
@@ -31,15 +42,45 @@ class RegisterViewController: UIViewController,vaccineDataSentToRegisterViewCont
     @IBOutlet weak var passwordLabelRegister: UITextField!
     @IBOutlet weak var repeatPasswordLabelRegister: UITextField!
     @IBOutlet weak var vactinationInfo: UIButton!
+    
+    @IBOutlet weak var locationInfo: UIButton!
+    
     @IBOutlet weak var confirmRegisterButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getVaccinesAPI()
 
         registerDesign()
         self.hideKeyboardWhenTappedAround()
         
     }
+    private func getVaccinesAPI (){
+        DispatchQueue.main.async {
+                    APIServicies.getVaccines(completion: { [weak self] result in
+                        switch result {
+                        case .success(let vaccines):
+                            vactinationCollectionViewController.vaccinesData = vaccines.data
+                        case .failure(let error):
+                            print(error)
+                        }
+                    })
+                }
+        DispatchQueue.main.async {
+            APIServicies.getNations(completion: { result in
+                switch result {
+                case .success(let nations):
+                    LocationViewController.locationData = nations.data
+                case .failure(let error):
+                    print(error)
+                }
+                
+            })
+        }
+    }
+    
+    
 
     
     
@@ -58,6 +99,9 @@ class RegisterViewController: UIViewController,vaccineDataSentToRegisterViewCont
         vactinationInfo.buttonShadow(shadowColor: .gray, shadowX: 2, shadowY: 4, shadowOpacity: 0.3, shadowRadius: 4, cornerRadius: 15)
         vactinationInfo.buttonShadow(shadowColor: .gray, shadowX: 2, shadowY: 4, shadowOpacity: 0.3, shadowRadius: 4, cornerRadius: 15)
         
+        locationInfo.buttonFontAndSize(fontFamily: "QuickSand", fontSize: 18)
+        locationInfo.buttonShadow(shadowColor: .gray, shadowX: 2, shadowY: 4, shadowOpacity: 0.3, shadowRadius: 4, cornerRadius: 15)
+        locationInfo.buttonShadow(shadowColor: .gray, shadowX: 2, shadowY: 4, shadowOpacity: 0.3, shadowRadius: 4, cornerRadius: 15)
         
         RegisterLabel.FontStyle(fontSize: 64, shadowRadius: 4, shadowOpacity: 0.25, shadowX: 0, shadowY: 4, fontFamily: "QuickSand-bold")
         //email
@@ -182,7 +226,7 @@ class RegisterViewController: UIViewController,vaccineDataSentToRegisterViewCont
                     // user was created succesfully,store name and vaccine
                     let db = Firestore.firestore()
                     
-                    db.collection("users").addDocument(data: ["username":self.usernameLabelRegister.text ,"vaccine":self.chosenVaccine, "uid":result!.user.uid]) { error in
+                    db.collection("users").addDocument(data: ["username":self.usernameLabelRegister.text ,"vaccine":self.chosenVaccine,"nationality":self.chosenLocation, "uid":result!.user.uid]) { error in
                         if error != nil {
                             // show error
                             showError("user data blablabla")
