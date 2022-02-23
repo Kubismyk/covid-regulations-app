@@ -67,7 +67,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="351" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xdH-YX-rIJ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading-icon-1" translatesAutoresizingMaskIntoConstraints="NO" id="xdH-YX-rIJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="155" height="125"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="155" id="LqK-yN-ZYL"/>
@@ -146,6 +146,7 @@
     </scenes>
     <resources>
         <image name="bookmark.fill" catalog="system" width="112" height="128"/>
+        <image name="loading-icon-1" width="614" height="614"/>
         <image name="vector1" width="131" height="174"/>
         <image name="vector2" width="149" height="174"/>
         <image name="vector3" width="131" height="174"/>

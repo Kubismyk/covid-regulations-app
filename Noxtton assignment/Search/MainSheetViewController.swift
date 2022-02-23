@@ -6,11 +6,18 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import Kingfisher
+import FirebaseFirestore
+
+
 
 
 class MainSheetViewController: UIViewController {
-    
+        
 
+    //@IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var myNationalityLabel: UILabel!
     @IBOutlet weak var myVaccineLabel: UILabel!
@@ -63,16 +70,75 @@ class MainSheetViewController: UIViewController {
     @IBOutlet weak var myVaccineText: UILabel!
     @IBOutlet weak var generalInfoLabel: UILabel!
     
+    @IBOutlet weak var popUpButton: UIButton!
+    
+    
+    @IBOutlet var transferApiLabels: [UILabel]!
+    @IBOutlet var transferLabelsCollection: [UILabel]!
+    
+    // transfers
+    @IBOutlet weak var transferTouristsAllowed: UILabel!
+    @IBOutlet weak var transferBusinessVisits: UILabel!
+    @IBOutlet weak var pCRTransfers: UILabel!
+    @IBOutlet weak var pCRNonResidentsTransfer: UILabel!
+    
+    @IBOutlet weak var covidPassportTransfer: UILabel!
+    
+    @IBOutlet weak var transferCountryInfo: UILabel!
+    
+    @IBOutlet var allTransferLabels: [UILabel]!
+    
+    
+    
+    static var delegate: savedDataSendingDelegateProtocolo? = nil
+    
+    
+    
+
+    var testInfo:String = ""
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        makeTransferApisDissapear()
+        let optionsClosure = { (action: UIAction) in
+            let chosenAirport = action.title
+            switch chosenAirport {
+            case "Tbilisi airport":
+                self.getAPI(data: "TBS")
+            case "Riga airport":
+                self.getAPI(data: "RIX")
+            case "Tallinn airport":
+                self.getAPI(data: "TLL")
+            case "Berlin airport":
+                self.getAPI(data: "BER")
+            case "Geneva airport":
+                self.getAPI(data: "GVA")
+            default:
+                print("")
+            }
+        }
+        popUpButton.changesSelectionAsPrimaryAction = true
+        popUpButton.showsMenuAsPrimaryAction = true
+        popUpButton.menu = UIMenu(children: [
+          UIAction(title: "Tbilisi airport", state: .on, handler: optionsClosure),
+          UIAction(title: "Riga airport", handler: optionsClosure),
+          UIAction(title: "Tallinn airport", handler: optionsClosure),
+          UIAction(title: "Berlin airport", handler: optionsClosure),
+          UIAction(title: "Geneva airport", handler: optionsClosure),
+        ])
+        
+        
         setupDesign()
         self.countryTitle.text = a
         self.airport.text = b
         self.countryImage.image = self.cityImage.image
         setUpEveryThing()
         apiLabels.forEach {
+            $0.FontStyle(fontSize: 16, shadowRadius: 5, shadowOpacity: 0.25, shadowX: 2, shadowY: 2, fontFamily: "QuickSand-semibold")
+        }
+        transferApiLabels.forEach {
             $0.FontStyle(fontSize: 16, shadowRadius: 5, shadowOpacity: 0.25, shadowX: 2, shadowY: 2, fontFamily: "QuickSand-semibold")
         }
         myNationalityLabel.text = usefulValuesFetchedFromFirebase.nationality
@@ -83,16 +149,30 @@ class MainSheetViewController: UIViewController {
         myVaccineText.FontStyle(fontSize: 16, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 0, shadowY: 0, fontFamily: "QuickSand-semibold")
     }
     
+    func makeTransferApisDissapear(){
+        self.allTransferLabels.forEach { labels in
+            labels.alpha = 0
+        }
+    }
+    func makeTransferApisAppear(){
+        self.allTransferLabels.forEach { labels in
+            labels.alpha = 1
+        }
+    }
+    
+    
     
     func setUpEveryThing(){
         self.generalInfoLabel.text! = generalInfo
-        APIServicies.getRestrictionsInfo(from: usefulValuesFetchedFromFirebase.nationality,
-                                                 countryCode: "",
-                                         to: self.info,
-                                         with: usefulValuesFetchedFromFirebase.vaccine, completion: { result in
+        
+        
+        APIServicies.getRestrictionsInfo(from: usefulValuesFetchedFromFirebase.nationality ,
+                                         countryCode: self.testInfo ,
+                                         to: self.info ,
+                                         with: usefulValuesFetchedFromFirebase.vaccine , completion: { result in
                     switch result {
                     case .success(let restrictions):
-                        
+                                                
                         var generalRestrictions:APIServicies.GeneralRestricitons
                         generalRestrictions = restrictions.generalRestricitons!
                         
@@ -100,7 +180,6 @@ class MainSheetViewController: UIViewController {
                         vaccinationRestrictions = restrictions.byVaccination!
                         
                         var nationalityRestrictions:APIServicies.RestrictionsByNationalityData
-                        //nationalityRestrictions = restrictions.byNationality!
                         nationalityRestrictions = restrictions.byNationality!
                         
                         DispatchQueue.main.async{
@@ -143,25 +222,89 @@ class MainSheetViewController: UIViewController {
                 })
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-
-
-    }
     var cityImage = UIImageView()
     
     
-    func configure(data:SearchCollectionViewData, dataTwo:APIServicies.Airport){
-        self.cityImage.image = data.image
-        self.a = dataTwo.country
-        self.b = dataTwo.city
-        self.info = dataTwo.code
+
+    @IBAction func mainButtonClick(_ sender: UIButton) {
+
+        
+        let userID = Auth.auth().currentUser!.uid
+        let db = Firestore.firestore()
+        guard let imageData = self.countryImage.image?.jpegData(compressionQuality: 0.4) else {
+            return
+        }
+        let storageRef = Storage.storage().reference(forURL: "gs://covidregulationsapp.appspot.com/")
+        let storageProfileRef = storageRef.child("savedImage").child(userID)
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        storageProfileRef.putData(imageData,metadata: metadata)
+        { (storageMetadata, error) in
+            if error != nil {
+            print("error")
+            }
+            storageProfileRef.downloadURL(completion: {(url,error) in
+                if let metaImageUrl = url?.absoluteString {
+                }
+                let db = Firestore.firestore()
+                db.collection("users/\(userID)/saved")
+                    .getDocuments() { (querySnapshot, err) in
+                        if let err = err {
+                            print("Couldnt update : \(err)")
+                        } else {
+                            let document = querySnapshot!.documents.first
+                            document!.reference.updateData([
+                                "countryImage": url?.absoluteString
+                            ])
+                        }
+                    }
+            })
+        }
+//        if MainSheetViewController.delegate != nil {
+//            let countrySentData = countryTitle.text!
+//            let airportSentData = airport.text!
+//            let countryImageSentData = countryImage.image!
+//            let codeSentData = info
+//            MainSheetViewController.delegate?.sendDataToSaved(savedData: SavedCountries(code: codeSentData, country: countrySentData, city: airportSentData, image: metaImageUrl))
+//        }
+        
+        db.collection("users/\(userID)/saved").addDocument(data: [
+            "country":self.countryTitle.text!,
+            "code":self.info,
+            "city":self.airport.text!
+        ])
+
+        dismiss(animated: true, completion: nil)
     }
+    func configWith(data:mixedData) {
+        self.cityImage.image = data.image
+        self.a = data.country
+        self.b = data.city
+        self.info = data.code
+    }
+    
+    func secondConfigure(data:SavedCountries){
+        let url = URL(string: data.image)
+        self.cityImage.kf.setImage(with:url)
+        self.a = data.country
+        self.b = data.city
+        self.info = data.code
+    }
+    
+    
+    @IBAction func menuButton(_ sender: Any) {
+    }
+    
+    
+    
     func setupDesign(){
         labelsCollection.forEach {
             $0.FontStyle(fontSize: 16, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 0, shadowY: 0, fontFamily: "QuickSand-light")
         }
-
+        transferLabelsCollection.forEach{
+            $0.FontStyle(fontSize: 16, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 0, shadowY: 0, fontFamily: "QuickSand-light")
+        }
+        
         biggerLabelsCollection.forEach { $0.FontStyle(fontSize: 24, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 0, shadowY: 0, fontFamily: "QuickSand-medium")
         }
         
@@ -172,5 +315,41 @@ class MainSheetViewController: UIViewController {
         countryImage.dropShadow(shadowColor: .black, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
     }
     
+    
+    func getAPI(data:String){
+        self.makeTransferApisAppear()
+        APIServicies.getRestrictionsInfo(from: usefulValuesFetchedFromFirebase.nationality,
+                                     countryCode: "",
+                                     to: data,
+                                         with: usefulValuesFetchedFromFirebase.vaccine, completion: { result in
+                switch result {
+                case .success(let restrictions):
+                                            
+                    
+                    DispatchQueue.main.async{
+                        
+                        
+                        var generalRestrictionsTransfer:APIServicies.GeneralRestricitons
+                        generalRestrictionsTransfer = restrictions.generalRestricitons!
+                        
+                        self.transferTouristsAllowed.text = String(generalRestrictionsTransfer.allowsTourists)
+                        self.transferBusinessVisits.text = String(generalRestrictionsTransfer.allowsBusinessVisit)
+                        self.pCRTransfers.text = String(generalRestrictionsTransfer.pcrRequiredForResidents)
+                        self.pCRNonResidentsTransfer.text = String(generalRestrictionsTransfer.pcrRequiredForNoneResidents)
+                        self.covidPassportTransfer.text = String(generalRestrictionsTransfer.covidPassportRequired)
+                        self.transferCountryInfo.text = String(generalRestrictionsTransfer.generalInformation)
+                        
+                        self.transferApiLabels.forEach{
+                            $0.isTrueOrFalse()
+                        }
+                        
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+                
+            })
+    }
+
     
 }

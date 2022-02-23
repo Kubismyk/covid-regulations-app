@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MySubscribitionsCollectionViewCell: UICollectionViewCell {
     
@@ -13,8 +14,9 @@ class MySubscribitionsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cityNCountryName: UILabel!
     @IBOutlet weak var learnMore: UILabel!
     
-    func configure(with items:SearchCollectionViewData){
-        cityImage.image = items.image
-        cityNCountryName.text = items.header
+    func configure(data:SavedCountries){
+        let url = URL(string: data.image)
+        self.cityImage.kf.setImage(with:url)
+        cityNCountryName.text = data.country + "," + data.city
     }
 }

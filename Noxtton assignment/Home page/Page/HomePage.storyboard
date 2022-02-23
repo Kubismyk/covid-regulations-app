@@ -21,7 +21,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HFt-jh-tGm">
                                 <rect key="frame" x="-20" y="707" width="454" height="249"/>
-                                <imageReference key="image" image="homeBottom"/>
+                                <imageReference key="image" image="homePage"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Trh-F0-Mxq">
                                 <rect key="frame" x="21" y="49" width="60" height="60"/>
@@ -37,19 +37,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.73709126655629142" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeg-mX-q7w">
-                                <rect key="frame" x="368" y="64" width="30" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="Me5-YP-v3V"/>
-                                    <constraint firstAttribute="height" constant="30" id="zsO-ng-QRe"/>
-                                </constraints>
-                                <color key="tintColor" name="myGray"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <imageReference key="image" image="bell.fill" catalog="system"/>
-                                </buttonConfiguration>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fym-pF-wkw">
                                 <rect key="frame" x="0.0" y="120" width="414" height="1"/>
                                 <color key="backgroundColor" name="myGray"/>
@@ -148,9 +135,6 @@
                             <constraint firstAttribute="trailing" secondItem="HFt-jh-tGm" secondAttribute="trailing" constant="-20" id="HfU-Ea-e0l"/>
                             <constraint firstItem="bqP-Gc-Ob6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="21" id="Hk9-Zh-UIK"/>
                             <constraint firstAttribute="bottom" secondItem="HFt-jh-tGm" secondAttribute="bottom" constant="-60" id="L8C-w1-e3j"/>
-                            <constraint firstItem="bqP-Gc-Ob6" firstAttribute="top" secondItem="IoQ-iq-fnN" secondAttribute="bottom" constant="21" id="LIn-2r-VCS"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eeg-mX-q7w" secondAttribute="trailing" constant="16" id="O92-6X-L1m"/>
-                            <constraint firstItem="eeg-mX-q7w" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="OUx-KC-IOz"/>
                             <constraint firstItem="yD6-nB-Xc1" firstAttribute="top" secondItem="fym-pF-wkw" secondAttribute="bottom" id="OlQ-F5-iUk"/>
                             <constraint firstItem="Trh-F0-Mxq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="PJx-cU-PgW"/>
                             <constraint firstItem="yD6-nB-Xc1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="21" id="RB1-vy-BjI"/>
@@ -175,7 +159,6 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="19I-28-aDX"/>
                     <connections>
-                        <outlet property="bellButton" destination="eeg-mX-q7w" id="KOn-RE-QOE"/>
                         <outlet property="chooseDestinationButton" destination="I8j-cS-Y0Y" id="i77-PZ-mh3"/>
                         <outlet property="contentView" destination="5EZ-qb-Rvc" id="DCS-Wo-8F9"/>
                         <outlet property="destinationBox" destination="bqP-Gc-Ob6" id="IBq-Vy-UAS"/>
@@ -259,9 +242,8 @@
     </scenes>
     <resources>
         <image name="asdasd" width="112" height="72"/>
-        <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="bookmark.fill" catalog="system" width="112" height="128"/>
-        <image name="homeBottom" width="375" height="249"/>
+        <image name="homePage" width="375" height="249"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>

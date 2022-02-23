@@ -14,3 +14,6 @@ struct Constants {
         static let logInViewController = "firstNavigationController"
     }
 }
+protocol savedDataSendingDelegateProtocolo{
+    func sendDataToSaved(savedData:SavedCountries)
+}

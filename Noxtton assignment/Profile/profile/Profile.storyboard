@@ -154,7 +154,6 @@
                                     <constraint firstAttribute="width" constant="148" id="Ell-43-VU9"/>
                                     <constraint firstAttribute="height" constant="136" id="vCi-pi-mMB"/>
                                 </constraints>
-                                <imageReference key="image" image="asdasd"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbi-h5-e2R">
                                 <rect key="frame" x="221" y="178" width="52" height="35"/>
@@ -262,7 +261,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="asdasd" width="112" height="72"/>
         <image name="gradient" width="375" height="351"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <image name="line.horizontal.3.decrease" catalog="system" width="128" height="73"/>

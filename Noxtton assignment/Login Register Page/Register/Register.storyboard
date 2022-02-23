@@ -21,7 +21,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IRp-1e-1Mr">
                                 <rect key="frame" x="0.0" y="-65" width="430" height="336"/>
-                                <imageReference key="image" image="RegisterTOP"/>
+                                <imageReference key="image" image="registerTop"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MSs-0L-lb3">
                                 <rect key="frame" x="47" y="271" width="320" height="50"/>
@@ -328,7 +328,7 @@
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qeb-46-fZx">
                                 <rect key="frame" x="0.0" y="686" width="414" height="156"/>
-                                <imageReference key="image" image="VaccineCollectionView"/>
+                                <imageReference key="image" image="vaccinesBottom"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="which vaccine?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZk-Qd-End">
                                 <rect key="frame" x="20" y="130" width="374" height="21"/>
@@ -446,8 +446,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="RegisterTOP" width="375" height="336"/>
-        <image name="VaccineCollectionView" width="375" height="171"/>
+        <image name="registerTop" width="375" height="336"/>
+        <image name="vaccinesBottom" width="375" height="169"/>
         <namedColor name="MainBlue">
             <color red="0.29411764705882354" green="0.45490196078431372" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import Kingfisher
 import Shuffle
 import FirebaseFirestore
 import Firebase
 
 struct usefulValuesFetchedFromFirebase {
-    static var username:String = ""
-    static var vaccine:String = "No info"
-    static var nationality:String = "No info"
+    static var username:String = "Loading..."
+    static var vaccine:String = "Loading..."
+    static var nationality:String = "Loading"
+    static var profileImageUrl:String = ""
 }
 
 class HomePageViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,SwipeCardStackDataSource,SwipeCardStackDelegate  {
@@ -33,7 +35,7 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
     
     
     var array3:[SearchCollectionViewData] = [
-        SearchCollectionViewData(header: "Georgia,Tbilisi Airport", information: "Georgia is located between Asia and Europe and occupies a land area of 69,700 square kilometres, bordered by the Black Sea to the west, Turkey to the southwest, Azerbaijan to the east, Russia to the north, and Armenia to the south. ... Georgian is the official language of Georgia, and it is spoken by 71% of the population.", image: UIImage(named: "tbtbtb")!),        SearchCollectionViewData(header: "Finlad,Geneva Airport", information: "Georgia is located between Asia and Europe and occupies a land area of 69,700 square kilometres, bordered by the Black Sea to the west, Turkey to the southwest, Azerbaijan to the east, Russia to the north, and Armenia to the south. ... Georgian is the official language of Georgia, and it is spoken by 71% of the population.", image: UIImage(named: "tbtbtb")!)
+        SearchCollectionViewData(header: "Georgia,Tbilisi Airport", information: "Georgia is located between Asia and Europe and occupies a land area of 69,700 square kilometres, bordered by the Black Sea to the west, Turkey to the southwest, Azerbaijan to the east, Russia to the north, and Armenia to the south. ... Georgian is the official language of Georgia, and it is spoken by 71% of the population.", image: UIImage(named: "tbilisi")!),        SearchCollectionViewData(header: "Finlad,Geneva Airport", information: "Georgia is located between Asia and Europe and occupies a land area of 69,700 square kilometres, bordered by the Black Sea to the west, Turkey to the southwest, Azerbaijan to the east, Russia to the north, and Armenia to the south. ... Georgian is the official language of Georgia, and it is spoken by 71% of the population.", image: UIImage(named: "tbilisi")!)
     ]
     
     var tags:[String] = ["#Sunny","#Beach","#Snow","#Mountain","#Sea","#Rainy"]
@@ -77,7 +79,6 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
         tagsCollectionView.dropShadow(shadowColor: .black, shadowX: 2, shadowY: 2, shadowOpacity: 0.25, shadowRadius: 5)
         tagsCollectionView.clipsToBounds = true
         
-        
 
         destinationBox.roundCorners(bottomCorners, radius: 58)
         destinationBox.dropShadow(shadowColor: .black, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 7)
@@ -93,17 +94,93 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
         profileImageView.dropShadow(shadowColor: .black, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
         profileImageView.layer.borderWidth = 2
         profileImageView.layer.borderColor = UIColor(named: "MainBlue")?.cgColor
+        HomePageViewController.getAPIs()
+        NotificationCenter.default.post(name: Notification.Name("userLogged"), object: nil)
+        if !UserDefaults.standard.bool(forKey: "ExecuteOnce") {
+            UserDefaults.standard.set(true, forKey: "ExecuteOnce")
+        }
     
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         readData()
+        HomePageViewController.readSavedData()
+        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.width/2.0
     }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
     }
 
-    //NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil)
+    
+    
+    static func readSavedData(){
+        
+        guard let userId = Auth.auth().currentUser?.uid else {
+            return
+        }
+        var db = Firestore.firestore()
+        db.collection("users/\(userId)/saved").getDocuments { (snapshot, error) in
+            guard let snapshot = snapshot else {
+                if let error = error {
+                    print("error: \(error)")
+                }
+                return
+            }
+            for doc in snapshot.documents {
+                guard let city = doc.get("city") as? String,
+                      let code = doc.get("code") as? String,
+                      let cImage = doc.get("countryImage") as? String,
+                      let country = doc.get("country") as? String else {
+                          continue // continue document loop
+                      }
+                print(city,code,country)
+                if MainSheetViewController.delegate != nil {
+                    let countrySentData = country
+                    let airportSentData = city
+                    let codeSentData = code
+                    MainSheetViewController.delegate?.sendDataToSaved(savedData: SavedCountries(code: codeSentData, country: countrySentData, city: airportSentData, image: cImage))
+                }
+            }
+        }
+    }
+    func theFunction(){
+        struct Holder { static var called = false }
+
+        if !Holder.called {
+            Holder.called = true
+            //do the thing
+        }
+    }
+    
+//    private lazy var readSavedData: Void = {
+//        guard let userId = Auth.auth().currentUser?.uid else {
+//            return
+//        }
+//        db.collection("users/\(userId)/saved").getDocuments { (snapshot, error) in
+//            guard let snapshot = snapshot else {
+//                if let error = error {
+//                    print(error)
+//                }
+//                return
+//            }
+//            for doc in snapshot.documents {
+//                guard let city = doc.get("city") as? String,
+//                      let code = doc.get("code") as? String,
+//                      let country = doc.get("country") as? String else {
+//                          continue // continue document loop
+//                      }
+//                if MainSheetViewController.delegate != nil {
+//                    let countrySentData = city
+//                    let airportSentData = city
+//                    //let countryImageSentData = UIImage("tbilisi")
+//                    let codeSentData = code
+//                    MainSheetViewController.delegate?.sendDataToSaved(savedData: savedCountries(code: codeSentData, country: countrySentData, city: airportSentData, image: UIImage(named: "tbilisi")!))
+//                }
+//                let docId = doc.documentID
+//            }
+//        }
+//    }()
+
     func readData(){
         self.db.collection("users").getDocuments{ (snapshot, err) in
             
@@ -112,19 +189,47 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
             }else {
                 if let userId = Auth.auth().currentUser?.uid {
                 if let currentUserDoc = snapshot?.documents.first(where: { ($0["uid"] as? String) == userId }) {
-                    var welcomeName = currentUserDoc["username"] as! String
-                    var vaccine = currentUserDoc["vaccine"] as! String
-                    var nationality = currentUserDoc["nationality"] as! String
+                    let welcomeName = currentUserDoc["username"] as! String
+                    let vaccine = currentUserDoc["vaccine"] as! String
+                    let nationality = currentUserDoc["nationality"] as! String
+                    let imageUrl = currentUserDoc["profileImageUrl"] as! String
                     usefulValuesFetchedFromFirebase.username = welcomeName
                     usefulValuesFetchedFromFirebase.vaccine = vaccine
                     usefulValuesFetchedFromFirebase.nationality = nationality
+                    usefulValuesFetchedFromFirebase.profileImageUrl = imageUrl
                     self.welcomeNameLabel.text = "Welcome, \(welcomeName)"
+                    let url = URL(string: imageUrl)
+                    self.profileImageView.kf.setImage(with:url)
+                    self.profileImageView.layer.masksToBounds = true
+                    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.height / 2
+                    self.profileImageView.contentMode = .scaleToFill
                     }
                 }
             }
         }
     }
     
+    static func getAPIs (){
+                    APIServicies.getAirports(completion: { result in
+                        switch result {
+                        case .success(let airports):
+                            SearchViewController.unfilteredData = []
+                            SearchViewController.airportsInformation.append(contentsOf: airports.data)
+                            let testData:[mixedData] = [
+                                        mixedData(data: SearchViewController.airportsInformation[0], image: SearchViewController.arrayToLookCellnBackDropCooler[0]),
+                                        mixedData(data: SearchViewController.airportsInformation[1], image: SearchViewController.arrayToLookCellnBackDropCooler[1]),
+                                        mixedData(data: SearchViewController.airportsInformation[2], image: SearchViewController.arrayToLookCellnBackDropCooler[2]),
+                                        mixedData(data: SearchViewController.airportsInformation[3], image: SearchViewController.arrayToLookCellnBackDropCooler[3]),
+                                        mixedData(data: SearchViewController.airportsInformation[4], image: SearchViewController.arrayToLookCellnBackDropCooler[4]),
+                                    ]
+                            SearchViewController.unfilteredData.append(contentsOf: testData)
+                            SearchViewController.filteredData = SearchViewController.unfilteredData
+                        case .failure(let error):
+                            print(error)
+                        }
+                        
+                    })
+    }
     
     
     @IBAction func chooseDestinationButtonClick(_ sender: UIButton) {
@@ -198,6 +303,8 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
             
             view_bg.backgroundColor = UIColor(named: "InnerShadowPurple")
             card.content?.addSubview(view_bg1)
+            view_bg.translatesAutoresizingMaskIntoConstraints = false
+            destinationBox.translatesAutoresizingMaskIntoConstraints = false
 
             
             let img_card_type = UIImageView(frame: CGRect.zero)
@@ -209,8 +316,6 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
             img_card_type.topAnchor.constraint(equalTo: view_bg1.topAnchor, constant: 0).isActive = true
             img_card_type.widthAnchor.constraint(equalToConstant: 100).isActive = true
             
-            //view_bg.centerXAnchor.constraint(equalToSystemSpacingAfter: destinationBox.centerXAnchor, multiplier: 1).isActive = true
-            //view_bg.centerYAnchor.constraint(equalToSystemSpacingBelow: destinationBox.centerYAnchor, multiplier: 1).isActive = true
             view_bg.rightAnchor.constraint(equalTo: destinationBox.rightAnchor, constant: 1).isActive = true
             view_bg.leftAnchor.constraint(equalTo: destinationBox.leftAnchor, constant: 1).isActive = true
             view_bg.bottomAnchor.constraint(equalTo: destinationBox.bottomAnchor, constant: 1).isActive = true
@@ -243,7 +348,7 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
             view_bg1.addSubview(countryName)
             countryName.topAnchor.constraint(equalTo: img_comapny.bottomAnchor, constant: 15).isActive = true
             countryName.leadingAnchor.constraint(equalTo: view_bg1.leadingAnchor, constant: 34).isActive = true
-            countryName.trailingAnchor.constraint(equalTo: view_bg1.trailingAnchor, constant: -24).isActive = true
+            countryName.trailingAnchor.constraint(equalTo: view_bg1.trailingAnchor, constant: 0).isActive = true
         }
         let leftOverlay = UIImageView()
         let img_dislike = UIImageView(frame: CGRect(x: view_bg.frame.size.width - 132, y: 32, width: 100, height: 100))

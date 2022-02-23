@@ -127,6 +127,8 @@ public extension UILabel {
         }
     }
     
+    
+    
     // work in progress gradinet to UILabel
     
 //    func gradientImage(size: CGSize, color1: CIColor, color2: CIColor, direction: GradientDirection = .Up) -> UIImage {
@@ -339,3 +341,9 @@ extension UIViewController {
 
 
 
+extension Sequence where Element: Hashable {
+    func uniqued() -> [Element] {
+        var set = Set<Element>()
+        return filter { set.insert($0).inserted }
+    }
+}

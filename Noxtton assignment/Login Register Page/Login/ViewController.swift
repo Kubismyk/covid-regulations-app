@@ -29,6 +29,7 @@ class ViewController: UIViewController {
 
     @IBAction func loginButton(_ sender: UIButton) {
         sender.keyboardAnimationView()
+        
         let email = usernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         //login user
@@ -47,7 +48,7 @@ class ViewController: UIViewController {
         storyBoard.instantiateViewController(withIdentifier: "TabBarController") as? TabBarController
         view.window?.rootViewController = tabViewController
         view.window?.makeKeyAndVisible()
-        NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil)
+        
     }
     
     @IBAction func goToRegisterButton(_ sender: Any) {

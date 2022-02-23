@@ -13,15 +13,48 @@ struct SubscribitionCollectionViewStructure {
     var CityNCountryName: String
 }
 
-var array1:[SubscribitionCollectionViewStructure] = [
-    SubscribitionCollectionViewStructure(cityImage: UIImage(named: "tbtbtb")!, CityNCountryName: "Tbilisi/Georgia"),SubscribitionCollectionViewStructure(cityImage: UIImage(named: "tbtbtb")!, CityNCountryName: "Switzerland/asdd"),SubscribitionCollectionViewStructure(cityImage: UIImage(named: "tbtbtb")!, CityNCountryName: "Switzerland/asdd")
-]
+struct SavedCountries: Hashable {
+    var code:String
+    var country:String
+    var city:String
+    var image:String
+    //var info:String
+}
 
-var savedArray:[SearchCollectionViewData] = [SearchCollectionViewData(header: "asd", information: "basd", image: UIImage(named:"tbtbtb")!)]
+//var array1:[SubscribitionCollectionViewStructure] = [
+//    SubscribitionCollectionViewStructure(cityImage: UIImage(named: "tbtbtb")!, CityNCountryName: "Tbilisi/Georgia"),SubscribitionCollectionViewStructure(cityImage: UIImage(named: "tbtbtb")!, CityNCountryName: "Switzerland/asdd"),SubscribitionCollectionViewStructure(cityImage: UIImage(named: "tbtbtb")!, CityNCountryName: "Switzerland/asdd")
+//]
+
+//var savedArray:[SearchCollectionViewData] = [SearchCollectionViewData(header: "asd", information: "basd", image: UIImage(named:"tbtbtb")!)]
+
+//var savedArrayInfo:[savedCountries] = [
+//    savedCountries(code: "BER", country: "Georgia", city: "Berlin", image: UIImage(named:"berlin")
+//]
 
 
 
-class SavedViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class SavedViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,savedDataSendingDelegateProtocolo {
+    func sendDataToSaved(savedData: SavedCountries) {
+        addedToSavesArray.append(savedData)
+        print(savedData)
+    }
+    
+    var addedToSavesArray:[SavedCountries]  = [
+        SavedCountries(code: "BER", country: "Germany", city: "Berlin", image: ""),
+        SavedCountries(code: "BER", country: "Germany", city: "Berlin", image: "")
+    ] {
+        didSet {
+            self.savedItemsCollectionView.reloadData()
+//            let uniqueOrdered = Array(NSOrderedSet(array: addedToSavesArray).array as! [SavedCountries])
+            let unique = Array(Set(addedToSavesArray))
+            addedToSavesArray.uniqued()
+        }
+    }
+    
+    
+    
+    
+    
 
     @IBOutlet weak var savedItemsCollectionView: UICollectionView!
     
@@ -32,51 +65,51 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        MainSheetViewController.delegate = self
         savedItemsCollectionView.dataSource = self
         savedItemsCollectionView.delegate = self
         mySubscribitionsLabel.FontStyle(fontSize: 34, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 2, shadowY: 2, fontFamily: "QuickSand-bold")
         mySubscribitionsLabel.textColor = UIColor(patternImage: UIImage(named: "gradient")!)
         savedItemsCollectionView.reloadData()
-        
+        addedToSavesArray.uniqued()
+        let unique = Array(Set(addedToSavesArray))
     }
     
     @objc func notificationRecieved(notification: Notification){
-        guard let userInfo = notification.userInfo,
-              let header = userInfo["header"] as? String,
-              let infoLabel = userInfo["infoLabel"] as? String,
-              let image = userInfo["image"] as? UIImage else { return }
-        let receivedData = SearchCollectionViewData(header: header, information: infoLabel, image: image)
-        savedArray.append(receivedData)
+//        guard let userInfo = notification.userInfo,
+//              let header = userInfo["header"] as? String,
+//              let infoLabel = userInfo["infoLabel"] as? String,
+//              let image = userInfo["image"] as? UIImage else { return }
+//        let receivedData = SearchCollectionViewData(header: header, information: infoLabel, image: image)
+//        savedArray.append(receivedData)
         savedItemsCollectionView.reloadData()
     }
     
     
+//    private func getAPI (){
+//                    APIServicies.getAirports(completion: { result in
+//                        switch result {
+//                        case .success(let airports):
+//                            self.airportsInformation.append(contentsOf: airports.data)
+//                        case .failure(let error):
+//                            print(error)
+//                        }
+//                        
+//                    })
+//    }
+    
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return savedArray.count
+        //return savedArray.count
+        return addedToSavesArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let countryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MySubscribitionsCollectionViewCell
-        countryCell.configure(with: savedArray[indexPath.row])
+
+        countryCell.configure(data: addedToSavesArray[indexPath.row])
         
-//        let shadowView = UIView()
-//        shadowView.layer.masksToBounds = false
-////        countryCell.layer.cornerRadius = 10
-////        countryCell.layer.borderWidth = 1.0
-//        shadowView.layer.borderColor = UIColor.lightGray.cgColor
-//        shadowView.layer.backgroundColor = UIColor.white.cgColor
-//        shadowView.layer.shadowColor = UIColor.black.cgColor
-//        shadowView.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
-//        shadowView.layer.shadowRadius = 10.0
-//        shadowView.layer.shadowOpacity = 0.25
-//
-//        let mainView = UIView()
-//        mainView.layer.cornerRadius = 10
-//        mainView.layer.masksToBounds = true
-//
-//        shadowView.addSubview(mainView)
         let shadowView = UIView()
         shadowView.dropShadow(shadowColor: .black, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
         
@@ -85,15 +118,11 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
         
         countryCell.shadowDecorate()
         countryCell.cityImage.clipsToBounds = true
-        //countryCell.cityImage.dropShadow(shadowColor: .black, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
         countryCell.cityImage.layer.cornerRadius = 10
         countryCell.cityImage.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         countryCell.cityNCountryName.FontStyle(fontSize: 25, shadowRadius: 5, shadowOpacity: 0.25, shadowX: 2, shadowY: 0, fontFamily: "QuickSand-bold")
         countryCell.learnMore.FontStyle(fontSize: 20, shadowRadius: 5, shadowOpacity: 0.25, shadowX: 2, shadowY: 0, fontFamily: "QuickSand-semibold")
-//        countryCell.layer.cornerRadius = 10
-//        countryCell.layer.borderWidth = 1.0
-//        countryCell.layer.borderColor = UIColor.clear.cgColor
-        //countryCell.layer.masksToBounds = true
+
 
 
         return countryCell
@@ -106,13 +135,10 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
             sheet.prefersScrollingExpandsWhenScrolledToEdge = true
             sheet.prefersGrabberVisible = true
         }
-        //backDropActionSheet.configure(with: savedArray[indexPath.row])
+        backDropActionSheet.secondConfigure(data: addedToSavesArray[indexPath.row])
         
         self.present(backDropActionSheet,animated: true,completion: nil)
     }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: collectionView.frame.size.width - 300, height: collectionView.frame.size.height/2)
-//    }
 }
 
 extension UICollectionViewCell {
@@ -131,4 +157,5 @@ extension UICollectionViewCell {
         layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: radius).cgPath
         layer.cornerRadius = radius
     }
+    
 }

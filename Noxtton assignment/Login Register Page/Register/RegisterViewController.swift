@@ -31,6 +31,8 @@ class RegisterViewController: UIViewController,vaccineDataSentToRegisterViewCont
     
     
     @IBOutlet weak var errorLabel: UILabel!
+    static var staticProfileImageUrlString:String = "https://static.wikia.nocookie.net/itstabletoptime/images/b/b5/Default.jpg/revision/latest?cb=20210606184459"
+    
     
     var chosenVaccine:String = ""
     var chosenLocation:String = ""
@@ -203,6 +205,7 @@ class RegisterViewController: UIViewController,vaccineDataSentToRegisterViewCont
     }
     
     @IBAction func registerTapped(_ sender: Any) {
+        HomePageViewController.getAPIs()
         let error = validateData()
         if error != nil{
             print("\(error)")
@@ -226,10 +229,11 @@ class RegisterViewController: UIViewController,vaccineDataSentToRegisterViewCont
                     // user was created succesfully,store name and vaccine
                     let db = Firestore.firestore()
                     
-                    db.collection("users").addDocument(data: ["username":self.usernameLabelRegister.text ,"vaccine":self.chosenVaccine,"nationality":self.chosenLocation, "uid":result!.user.uid]) { error in
-                        if error != nil {
-                            // show error
-                            showError("user data blablabla")
+                    db.collection("users").document(result!.user.uid).setData(["username":self.usernameLabelRegister.text ,"vaccine":self.chosenVaccine,"nationality":self.chosenLocation, "uid":result!.user.uid,"profileImageUrl":RegisterViewController.staticProfileImageUrlString]) { err in
+                        if let err = err {
+                            print("Error writing document: \(err)")
+                        } else {
+                            print("Document successfully written!")
                         }
                     }
                     self.transitionToHome()
