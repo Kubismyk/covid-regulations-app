@@ -218,7 +218,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Se-EB-sGR">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Se-EB-sGR">
                                 <rect key="frame" x="0.0" y="44" width="414" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="EnV-dY-Yvn"/>
@@ -277,7 +277,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfE-sS-ddc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfE-sS-ddc">
                                 <rect key="frame" x="20" y="452.5" width="374" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="S8n-QR-upT"/>
@@ -365,9 +365,21 @@
                         <outlet property="countryImage" destination="1Se-EB-sGR" id="xDj-fh-IPo"/>
                         <outlet property="countryText" destination="864-wj-hGe" id="P6x-Br-TjY"/>
                         <outlet property="covidPassRequired" destination="sa3-mq-u41" id="I2V-rO-Qi0"/>
+                        <outlet property="generalRestrictions" destination="Uh8-k5-qfn" id="cCW-8a-dgq"/>
                         <outlet property="mainInfo" destination="lfE-sS-ddc" id="2ST-MT-N32"/>
                         <outlet property="nonResidents" destination="jIL-Ap-QIh" id="I3V-fn-W5i"/>
                         <outlet property="residents" destination="tc4-ND-pPD" id="2fp-hK-qxV"/>
+                        <outletCollection property="fixedLabelsCollections" destination="BVy-cE-8zB" collectionClass="NSMutableArray" id="c1W-z1-roY"/>
+                        <outletCollection property="fixedLabelsCollections" destination="tWd-ud-bH7" collectionClass="NSMutableArray" id="Zpe-fF-lda"/>
+                        <outletCollection property="fixedLabelsCollections" destination="kWj-Aq-R81" collectionClass="NSMutableArray" id="vg4-VN-12s"/>
+                        <outletCollection property="fixedLabelsCollections" destination="98a-1X-G8D" collectionClass="NSMutableArray" id="OEz-AF-Hec"/>
+                        <outletCollection property="fixedLabelsCollections" destination="5qv-ng-psI" collectionClass="NSMutableArray" id="jrU-f7-Vs3"/>
+                        <outletCollection property="fixedLabelsCollections" destination="lfE-sS-ddc" collectionClass="NSMutableArray" id="Lg6-mQ-XB3"/>
+                        <outletCollection property="apiLabels" destination="hOW-7S-dyn" collectionClass="NSMutableArray" id="BIz-vY-5d9"/>
+                        <outletCollection property="apiLabels" destination="9TR-gM-YXK" collectionClass="NSMutableArray" id="lId-UM-zYW"/>
+                        <outletCollection property="apiLabels" destination="sa3-mq-u41" collectionClass="NSMutableArray" id="Fez-bP-CWt"/>
+                        <outletCollection property="apiLabels" destination="jIL-Ap-QIh" collectionClass="NSMutableArray" id="uLa-vW-wYr"/>
+                        <outletCollection property="apiLabels" destination="tc4-ND-pPD" collectionClass="NSMutableArray" id="kkH-zg-aMR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cn4-eg-KqE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

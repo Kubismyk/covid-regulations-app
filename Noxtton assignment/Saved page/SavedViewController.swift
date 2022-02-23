@@ -18,38 +18,17 @@ struct SavedCountries: Hashable {
     var country:String
     var city:String
     var image:String
-    //var info:String
 }
-
-//var array1:[SubscribitionCollectionViewStructure] = [
-//    SubscribitionCollectionViewStructure(cityImage: UIImage(named: "tbtbtb")!, CityNCountryName: "Tbilisi/Georgia"),SubscribitionCollectionViewStructure(cityImage: UIImage(named: "tbtbtb")!, CityNCountryName: "Switzerland/asdd"),SubscribitionCollectionViewStructure(cityImage: UIImage(named: "tbtbtb")!, CityNCountryName: "Switzerland/asdd")
-//]
-
-//var savedArray:[SearchCollectionViewData] = [SearchCollectionViewData(header: "asd", information: "basd", image: UIImage(named:"tbtbtb")!)]
-
-//var savedArrayInfo:[savedCountries] = [
-//    savedCountries(code: "BER", country: "Georgia", city: "Berlin", image: UIImage(named:"berlin")
-//]
 
 
 
 class SavedViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,savedDataSendingDelegateProtocolo {
     func sendDataToSaved(savedData: SavedCountries) {
-        addedToSavesArray.append(savedData)
+        SavedViewController.addedToSavesArray.append(savedData)
         print(savedData)
     }
     
-    var addedToSavesArray:[SavedCountries]  = [
-        SavedCountries(code: "BER", country: "Germany", city: "Berlin", image: ""),
-        SavedCountries(code: "BER", country: "Germany", city: "Berlin", image: "")
-    ] {
-        didSet {
-            self.savedItemsCollectionView.reloadData()
-//            let uniqueOrdered = Array(NSOrderedSet(array: addedToSavesArray).array as! [SavedCountries])
-            let unique = Array(Set(addedToSavesArray))
-            addedToSavesArray.uniqued()
-        }
-    }
+    static var addedToSavesArray = [SavedCountries]()
     
     
     
@@ -71,8 +50,8 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
         mySubscribitionsLabel.FontStyle(fontSize: 34, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 2, shadowY: 2, fontFamily: "QuickSand-bold")
         mySubscribitionsLabel.textColor = UIColor(patternImage: UIImage(named: "gradient")!)
         savedItemsCollectionView.reloadData()
-        addedToSavesArray.uniqued()
-        let unique = Array(Set(addedToSavesArray))
+        SavedViewController.addedToSavesArray.uniqued()
+        let unique = Array(Set(SavedViewController.addedToSavesArray))
     }
     
     @objc func notificationRecieved(notification: Notification){
@@ -102,13 +81,13 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //return savedArray.count
-        return addedToSavesArray.count
+        return SavedViewController.addedToSavesArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let countryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MySubscribitionsCollectionViewCell
 
-        countryCell.configure(data: addedToSavesArray[indexPath.row])
+        countryCell.configure(data: SavedViewController.addedToSavesArray[indexPath.row])
         
         let shadowView = UIView()
         shadowView.dropShadow(shadowColor: .black, shadowX: 0, shadowY: 0, shadowOpacity: 0.25, shadowRadius: 10)
@@ -135,7 +114,7 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
             sheet.prefersScrollingExpandsWhenScrolledToEdge = true
             sheet.prefersGrabberVisible = true
         }
-        backDropActionSheet.secondConfigure(data: addedToSavesArray[indexPath.row])
+        backDropActionSheet.secondConfigure(data: SavedViewController.addedToSavesArray[indexPath.row])
         
         self.present(backDropActionSheet,animated: true,completion: nil)
     }

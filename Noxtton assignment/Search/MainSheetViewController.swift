@@ -231,6 +231,9 @@ class MainSheetViewController: UIViewController {
         
         let userID = Auth.auth().currentUser!.uid
         let db = Firestore.firestore()
+
+        
+        
         guard let imageData = self.countryImage.image?.jpegData(compressionQuality: 0.4) else {
             return
         }
@@ -244,17 +247,18 @@ class MainSheetViewController: UIViewController {
             print("error")
             }
             storageProfileRef.downloadURL(completion: {(url,error) in
-                if let metaImageUrl = url?.absoluteString {
-                }
                 let db = Firestore.firestore()
                 db.collection("users/\(userID)/saved")
                     .getDocuments() { (querySnapshot, err) in
                         if let err = err {
                             print("Couldnt update : \(err)")
                         } else {
-                            let document = querySnapshot!.documents.first
-                            document!.reference.updateData([
+                            db.collection("users/\(userID)/saved").addDocument(data: [
+                                "country":self.countryTitle.text!,
+                                "code":self.info,
+                                "city":self.airport.text!,
                                 "countryImage": url?.absoluteString
+                                
                             ])
                         }
                     }
@@ -268,11 +272,6 @@ class MainSheetViewController: UIViewController {
 //            MainSheetViewController.delegate?.sendDataToSaved(savedData: SavedCountries(code: codeSentData, country: countrySentData, city: airportSentData, image: metaImageUrl))
 //        }
         
-        db.collection("users/\(userID)/saved").addDocument(data: [
-            "country":self.countryTitle.text!,
-            "code":self.info,
-            "city":self.airport.text!
-        ])
 
         dismiss(animated: true, completion: nil)
     }

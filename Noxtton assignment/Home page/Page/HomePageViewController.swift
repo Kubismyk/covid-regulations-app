@@ -133,13 +133,17 @@ class HomePageViewController: UIViewController,UICollectionViewDataSource,UIColl
                       let country = doc.get("country") as? String else {
                           continue // continue document loop
                       }
-                print(city,code,country)
-                if MainSheetViewController.delegate != nil {
-                    let countrySentData = country
-                    let airportSentData = city
-                    let codeSentData = code
-                    MainSheetViewController.delegate?.sendDataToSaved(savedData: SavedCountries(code: codeSentData, country: countrySentData, city: airportSentData, image: cImage))
-                }
+                var testA = [SavedCountries]()
+                testA.append(SavedCountries(code: code, country: country, city: city, image: cImage))
+                SavedViewController.addedToSavesArray.append(contentsOf: testA)
+//                testA.uniqued()
+//                print(testA)
+//                if MainSheetViewController.delegate != nil {
+//                    let countrySentData = country
+//                    let airportSentData = city
+//                    let codeSentData = code
+//                    MainSheetViewController.delegate?.sendDataToSaved(savedData: SavedCountries(code: codeSentData, country: countrySentData, city: airportSentData, image: cImage))
+//                }
             }
         }
     }
