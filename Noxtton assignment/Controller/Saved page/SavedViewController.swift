@@ -22,7 +22,12 @@ struct SavedCountries: Hashable {
 
 
 
-class SavedViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,savedDataSendingDelegateProtocolo {
+class SavedViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,MyDataSendingDelegateProtocol {
+    func sendDataToFirstViewController(myData: SavedCountries) {
+        SavedViewController.addedToSavesArray.append(myData)
+        self.savedItemsCollectionView.reloadData()
+    }
+    
     func sendDataToSaved(savedData: SavedCountries) {
         SavedViewController.addedToSavesArray.append(savedData)
         print(savedData)
@@ -31,7 +36,10 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
     static var addedToSavesArray = [SavedCountries]()
     
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            let secondVC: MainSheetViewController = segue.destination as! MainSheetViewController
+            secondVC.delegate = self
+    }
     
     
 
@@ -44,7 +52,7 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        MainSheetViewController.delegate = self
+        //MainSheetViewController.delegate = self
         savedItemsCollectionView.dataSource = self
         savedItemsCollectionView.delegate = self
         mySubscribitionsLabel.FontStyle(fontSize: 34, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 2, shadowY: 2, fontFamily: "QuickSand-bold")

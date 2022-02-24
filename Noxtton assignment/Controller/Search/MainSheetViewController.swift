@@ -11,7 +11,9 @@ import FirebaseAuth
 import Kingfisher
 import FirebaseFirestore
 
-
+protocol MyDataSendingDelegateProtocol {
+    func sendDataToFirstViewController(myData: SavedCountries)
+}
 
 
 class MainSheetViewController: UIViewController {
@@ -165,6 +167,8 @@ class MainSheetViewController: UIViewController {
     func setUpEveryThing(){
         self.generalInfoLabel.text! = generalInfo
         
+
+        
         
         APIServicies.getRestrictionsInfo(from: UsefulValuesFetchedFromFirebase.nationality ,
                                          countryCode: self.testInfo ,
@@ -224,7 +228,7 @@ class MainSheetViewController: UIViewController {
     
     var cityImage = UIImageView()
     
-    
+    var delegate: MyDataSendingDelegateProtocol? = nil
 
     @IBAction func mainButtonClick(_ sender: UIButton) {
         
@@ -250,6 +254,11 @@ class MainSheetViewController: UIViewController {
             print("error")
             }
             storageProfileRef.downloadURL(completion: {(url,error) in
+                if self.delegate != nil {
+                    let dataToBeSent:SavedCountries = SavedCountries(code: self.info, country: self.a, city: self.b, image: url!.absoluteString)
+                    self.delegate?.sendDataToFirstViewController(myData: dataToBeSent)
+                    //dismiss(animated: true, completion: nil)
+                }
                 let db = Firestore.firestore()
                 db.collection("users/\(userID)/saved")
                     .getDocuments() { (querySnapshot, err) in
