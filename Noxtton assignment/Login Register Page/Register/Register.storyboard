@@ -40,7 +40,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Kod-ro-sCB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
                                     <action selector="usernameTextFieldTapped:" destination="Y6W-OH-hqX" eventType="touchDown" id="aJy-9e-MwW"/>
                                 </connections>
@@ -51,7 +51,7 @@
                                     <constraint firstAttribute="height" constant="50" id="TjD-DX-4Ds"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
                                     <action selector="usernameTextFieldTapped:" destination="Y6W-OH-hqX" eventType="touchDown" id="C6a-YX-EHR"/>
                                 </connections>
@@ -139,7 +139,7 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="where are you ?"/>
+                                <buttonConfiguration key="configuration" style="plain" title="your nationality"/>
                                 <connections>
                                     <segue destination="JO8-Du-C8V" kind="presentation" identifier="getData2Segue" id="rP5-13-eG5"/>
                                 </connections>

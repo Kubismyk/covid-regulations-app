@@ -55,32 +55,13 @@ class SavedViewController: UIViewController,UICollectionViewDataSource,UICollect
     }
     
     @objc func notificationRecieved(notification: Notification){
-//        guard let userInfo = notification.userInfo,
-//              let header = userInfo["header"] as? String,
-//              let infoLabel = userInfo["infoLabel"] as? String,
-//              let image = userInfo["image"] as? UIImage else { return }
-//        let receivedData = SearchCollectionViewData(header: header, information: infoLabel, image: image)
-//        savedArray.append(receivedData)
         savedItemsCollectionView.reloadData()
     }
     
     
-//    private func getAPI (){
-//                    APIServicies.getAirports(completion: { result in
-//                        switch result {
-//                        case .success(let airports):
-//                            self.airportsInformation.append(contentsOf: airports.data)
-//                        case .failure(let error):
-//                            print(error)
-//                        }
-//                        
-//                    })
-//    }
-    
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return savedArray.count
         return SavedViewController.addedToSavesArray.count
     }
     

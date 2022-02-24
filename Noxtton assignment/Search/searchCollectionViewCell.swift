@@ -12,7 +12,7 @@ class searchCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var countryImage: UIImageView!
     
-    func config(data:mixedData){
+    func config(data:MixedData){
         self.headerTitle.text = data.country + "," + data.city + " airport"
         self.infoLabel.text = data.info
     }

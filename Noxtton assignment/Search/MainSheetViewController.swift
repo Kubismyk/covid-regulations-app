@@ -141,9 +141,9 @@ class MainSheetViewController: UIViewController {
         transferApiLabels.forEach {
             $0.FontStyle(fontSize: 16, shadowRadius: 5, shadowOpacity: 0.25, shadowX: 2, shadowY: 2, fontFamily: "QuickSand-semibold")
         }
-        myNationalityLabel.text = usefulValuesFetchedFromFirebase.nationality
+        myNationalityLabel.text = UsefulValuesFetchedFromFirebase.nationality
         myNationalityLabel.FontStyle(fontSize: 17, shadowRadius: 5, shadowOpacity: 0.25, shadowX: 2, shadowY: 2, fontFamily: "QuickSand-bold")
-        myVaccineLabel.text = usefulValuesFetchedFromFirebase.vaccine
+        myVaccineLabel.text = UsefulValuesFetchedFromFirebase.vaccine
         myVaccineLabel.FontStyle(fontSize: 17, shadowRadius: 5, shadowOpacity: 0.25, shadowX: 2, shadowY: 2, fontFamily: "QuickSand-bold")
         myNationalityText.FontStyle(fontSize: 16, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 0, shadowY: 0, fontFamily: "QuickSand-semibold")
         myVaccineText.FontStyle(fontSize: 16, shadowRadius: 10, shadowOpacity: 0.25, shadowX: 0, shadowY: 0, fontFamily: "QuickSand-semibold")
@@ -166,10 +166,10 @@ class MainSheetViewController: UIViewController {
         self.generalInfoLabel.text! = generalInfo
         
         
-        APIServicies.getRestrictionsInfo(from: usefulValuesFetchedFromFirebase.nationality ,
+        APIServicies.getRestrictionsInfo(from: UsefulValuesFetchedFromFirebase.nationality ,
                                          countryCode: self.testInfo ,
                                          to: self.info ,
-                                         with: usefulValuesFetchedFromFirebase.vaccine , completion: { result in
+                                         with: UsefulValuesFetchedFromFirebase.vaccine , completion: { result in
                     switch result {
                     case .success(let restrictions):
                                                 
@@ -227,6 +227,8 @@ class MainSheetViewController: UIViewController {
     
 
     @IBAction func mainButtonClick(_ sender: UIButton) {
+        
+
 
         
         let userID = Auth.auth().currentUser!.uid
@@ -238,7 +240,8 @@ class MainSheetViewController: UIViewController {
             return
         }
         let storageRef = Storage.storage().reference(forURL: "gs://covidregulationsapp.appspot.com/")
-        let storageProfileRef = storageRef.child("savedImage").child(userID)
+        let uuid = UUID().uuidString
+        let storageProfileRef = storageRef.child("savedImage").child(userID).child(uuid)
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         storageProfileRef.putData(imageData,metadata: metadata)
@@ -263,19 +266,14 @@ class MainSheetViewController: UIViewController {
                         }
                     }
             })
+            
         }
-//        if MainSheetViewController.delegate != nil {
-//            let countrySentData = countryTitle.text!
-//            let airportSentData = airport.text!
-//            let countryImageSentData = countryImage.image!
-//            let codeSentData = info
-//            MainSheetViewController.delegate?.sendDataToSaved(savedData: SavedCountries(code: codeSentData, country: countrySentData, city: airportSentData, image: metaImageUrl))
-//        }
+
         
 
         dismiss(animated: true, completion: nil)
     }
-    func configWith(data:mixedData) {
+    func configWith(data:MixedData) {
         self.cityImage.image = data.image
         self.a = data.country
         self.b = data.city
@@ -317,10 +315,10 @@ class MainSheetViewController: UIViewController {
     
     func getAPI(data:String){
         self.makeTransferApisAppear()
-        APIServicies.getRestrictionsInfo(from: usefulValuesFetchedFromFirebase.nationality,
+        APIServicies.getRestrictionsInfo(from: UsefulValuesFetchedFromFirebase.nationality,
                                      countryCode: "",
                                      to: data,
-                                         with: usefulValuesFetchedFromFirebase.vaccine, completion: { result in
+                                         with: UsefulValuesFetchedFromFirebase.vaccine, completion: { result in
                 switch result {
                 case .success(let restrictions):
                                             

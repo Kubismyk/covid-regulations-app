@@ -59,14 +59,14 @@ class GuestSearchViewController: UIViewController,UICollectionViewDelegate,UICol
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        SearchViewController.filteredData = [mixedData]()
+        SearchViewController.filteredData = [MixedData]()
         for country in SearchViewController.unfilteredData {
             if country.country.uppercased().contains(searchText.uppercased()) {
                 SearchViewController.filteredData.append(country)
             }
         }
         if searchText == "" {
-            SearchViewController.filteredData = [mixedData]()
+            SearchViewController.filteredData = [MixedData]()
             SearchViewController.filteredData = SearchViewController.unfilteredData
         }
         self.collectionView.reloadData()

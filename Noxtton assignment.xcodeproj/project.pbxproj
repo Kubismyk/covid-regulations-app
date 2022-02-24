@@ -24,6 +24,7 @@
 		584C456F27B8818E0057B87A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 584C456E27B8818E0057B87A /* FirebaseStorage */; };
 		584C457127B889840057B87A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C457027B889840057B87A /* Utilities.swift */; };
 		584C457327B997EA0057B87A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C457227B997E90057B87A /* Constants.swift */; };
+		584C94CC27C6A66B00ED0BBC /* RecommendedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C94CB27C6A66B00ED0BBC /* RecommendedCollectionViewCell.swift */; };
 		5852347227AB59180058DADA /* Shuffle in Frameworks */ = {isa = PBXBuildFile; productRef = 5852347127AB59180058DADA /* Shuffle */; };
 		5854B34627BCDFF700C5BF2C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854B34527BCDFF700C5BF2C /* API.swift */; };
 		5854B34827BCE2FF00C5BF2C /* Oswald-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5854B34727BCE2FF00C5BF2C /* Oswald-VariableFont_wght.ttf */; };
@@ -73,6 +74,7 @@
 		584C456527B880E10057B87A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		584C457027B889840057B87A /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		584C457227B997E90057B87A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		584C94CB27C6A66B00ED0BBC /* RecommendedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedCollectionViewCell.swift; sourceTree = "<group>"; };
 		5854B34527BCDFF700C5BF2C /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5854B34727BCE2FF00C5BF2C /* Oswald-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		5854B34C27BD279400C5BF2C /* GuestHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestHomePageViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				5878663B2795FE2100CB274E /* HomePageViewController.swift */,
 				5878663D2795FE2A00CB274E /* HomePage.storyboard */,
 				586FF996279C45180029BE7B /* TagsCollectionViewCell.swift */,
+				584C94CB27C6A66B00ED0BBC /* RecommendedCollectionViewCell.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				5854B35327BDA02500C5BF2C /* LocationCollectionViewCell.swift in Sources */,
 				588DF69127A082E900D052B8 /* ProfileViewController.swift in Sources */,
 				581BEC7D27AFEB15006FE943 /* MainSheetViewController.swift in Sources */,
+				584C94CC27C6A66B00ED0BBC /* RecommendedCollectionViewCell.swift in Sources */,
 				588DF6A227A5E90D00D052B8 /* searchCollectionViewCell.swift in Sources */,
 				5802F09E278F0C5100296D2A /* Noxtton_assignment.xcdatamodeld in Sources */,
 				587866342792278F00CB274E /* RegisterViewController.swift in Sources */,

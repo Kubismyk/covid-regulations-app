@@ -12,7 +12,7 @@ struct SearchCollectionViewData {
     var information:String
     var image:UIImage
 }
-struct mixedData {
+struct MixedData {
     var country:String
     var code:String
     var city:String
@@ -41,8 +41,8 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
     
     static var airportsInformation = [APIServicies.Airport]()
     
-    static var unfilteredData = [mixedData]()
-    static var filteredData = [mixedData]()
+    static var unfilteredData = [MixedData]()
+    static var filteredData = [MixedData]()
     
     
 
@@ -99,14 +99,14 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
         self.present(backDropActionSheet,animated: true,completion: nil)
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        SearchViewController.filteredData = [mixedData]()
+        SearchViewController.filteredData = [MixedData]()
         for country in SearchViewController.unfilteredData {
             if country.country.uppercased().contains(searchText.uppercased()) {
                 SearchViewController.filteredData.append(country)
             }
         }
         if searchText == "" {
-            SearchViewController.filteredData = [mixedData]()
+            SearchViewController.filteredData = [MixedData]()
             SearchViewController.filteredData = SearchViewController.unfilteredData
         }
         self.collectionView.reloadData()

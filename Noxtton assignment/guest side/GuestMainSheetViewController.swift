@@ -46,7 +46,7 @@ class GuestMainSheetViewController: UIViewController {
     
     
     
-    func configWith(data:mixedData) {
+    func configWith(data:MixedData) {
         self.image = data.image
         self.country = data.country
         self.city = data.city

@@ -36,15 +36,15 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         profileDesign()
-        self.mainProfilePicImage.kf.setImage(with: URL(string: usefulValuesFetchedFromFirebase.profileImageUrl))
+        self.mainProfilePicImage.kf.setImage(with: URL(string: UsefulValuesFetchedFromFirebase.profileImageUrl))
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        self.usernameText.text = usefulValuesFetchedFromFirebase.username
-        self.usernameLabel.text = usefulValuesFetchedFromFirebase.username
-        self.emailText.text = usefulValuesFetchedFromFirebase.nationality
-        self.isUserVaccinatedText.text = usefulValuesFetchedFromFirebase.vaccine
+        self.usernameText.text = UsefulValuesFetchedFromFirebase.username
+        self.usernameLabel.text = UsefulValuesFetchedFromFirebase.username
+        self.emailText.text = UsefulValuesFetchedFromFirebase.nationality
+        self.isUserVaccinatedText.text = UsefulValuesFetchedFromFirebase.vaccine
         self.mainProfilePicImage.layer.masksToBounds = true
         self.mainProfilePicImage.layer.cornerRadius = 30
         self.mainProfilePicImage.contentMode = .scaleToFill

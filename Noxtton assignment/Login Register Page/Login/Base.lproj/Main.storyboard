@@ -103,7 +103,7 @@
                                     <constraint firstAttribute="height" constant="50" id="mkE-ek-Esy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
                                     <action selector="usernameTextFieldTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="vf3-C0-CW4"/>
                                 </connections>
